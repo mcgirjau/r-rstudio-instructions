@@ -85,20 +85,106 @@ This time, the ``command not found`` error should be replaced by information on 
 
 Now let's install RStudio - the most popular IDE (Integrated Development Environment) for the R language. If you already have RStudio installed, you can skip this section.
 
+Go to https://rstudio.com/products/rstudio/download/, and scroll down until you see the download options. We will be downloading RStudio Desktop (Open Source License), since it is free - click the big blue *Download* button.
 
+![](img/mac11.png)
 
-## Installing LaTeX
+This takes us to a list of downloads for different platforms - choose the one that says *RStudio 1.2.5019 - macOS 10.12+ (64-bit)*. This will download a .dmg file onto your machine. 
+
+![](img/mac12.png)
+
+Double click on the .dmg file in the downloads pane, or wherever you downloaded it to, to start the installer. Again, if you've installed programs on your Mac before, this should be familiar territory. The installer will do its thing.
+
+![](img/mac13.png)
+
+A window like the one below will appear once everything is done. Click and drag the *RStudio.app* icon into the Applications folder.
+
+![](img/mac14.png)
+
+Don't forget to eject the installer at the very end - right click onto the disk icon that appeared on your Desktop during installation, and select *Eject "RStudio-1.2.5019"*.
+
+![](img/mac15.png)
 
 # Windows
 
 ## Installing R
 
+If you already have R installed, skip this section and go straight to installing RStudio. To check whether you have R, click on the *Start* menu at the bottom left of your desktop, and check whether R appears in the list of all programs. If it does, it means that R is already installed on your computer - clicking on it once will reveal which version it is. It's good to make sure you have the latest version installed - if your version is lower than 3.6.1, it might be a good idea to do a fresh reinstall of R.
+
+Let's download R. Go to https://cloud.r-project.org/ and click on *Download R for Windows*.
+
+![](img/win1.png)
+
+Now under *Subdirectories*, click the *base* link.
+
+![](img/win2.png)
+
+Click the link that says *Download R 3.6.1 for Windows* to download a .exe file.
+
+![](img/win3.png)
+
+Now let's start the installation. Double click on the downloaded .exe file in your browser's Download pane, or wherever you saved it to, to open the setup wizard. When asked whether you allow this app to make changes to your device, click *Yes*. Note that you cannot do this unless you have administrator rights on your machine (which you should have if you're using your own laptop).
+
+<!-- ![](img/win4.png) -->
+
+You can use any language you want during installation, but this guide will be using English, so if you want to follow along it's best that you use English too.
+
+![](img/win5.png)
+
+Click *Next*.
+
+![](img/win6.png)
+
+You will be prompted to choose a location for your installation - the setup wizard usually picks a good place by default (usually in your *Program Files* directory), so you needn't modify anything here unless you specifically want your R installation in a different place. Click *Next*.
+
+![](img/win7.png)
+
+You will now be prompted for which components you'd like to install - make sure all are selected (unless you specifically desire not to install certain components), and click *Next*.
+
+![](img/win8.png)
+
+Accept defaults for startup options, unless you know what you're doing. Click *Next*.
+
+![](img/win9.png)
+
+The setup wizard will create a shortcut in your Start Menu. You can leave everything as it is, and click *Next*.
+
+![](img/win10.png)
+
+If you want to create a Desktop shortcut, or a Quick Launch shortcut, make sure to select the appropriate checkboxes. Leave the bottom two checkboxes (under "Registry entries") selected. Click *Next*.
+
+![](img/win11.png)
+
+The setup wizard will now proceed to install everything appropriately. This should be fairly quick - less than a minute.
+
+![](img/win12.png)
+
+Once the installation is complete, click *Finish* to quit the setup wizard.
+
+![](img/win13.png)
+
+R should now be installed on your machine! Just to double check, click on the *Start* menu at the bottom left of your desktop, and make sure that R appears in the list of all programs.
+
 ## Installing RStudio
 
-## Installing LaTeX
+# Installing LaTeX
+
+LaTeX is ...
+
+We need LaTeX in R because ...
+
+While LaTeX installations are platform-dependent, installing it for the sole purpose of use in R Markdown can be done very easily in a platform-independent way from within RStudio.
 
 # Setting Up Your Workspace
 
 ## Folder Hierarchy
 
 ## Packages
+
+## Transferring Files from the RStudio Server
+
+# Optional
+
+## Customizing RStudio
+
+## Using GitHub with RStudio

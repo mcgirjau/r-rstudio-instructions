@@ -45,11 +45,11 @@ Click *Continue*.
 
 ![](img/mac3.png)
 
-Click *Continue* again.
+Click *Continue* again...
 
 ![](img/mac4.png)
 
-Keep clicking *Continue*.
+... and again one more time.
 
 ![](img/mac5.png)
 
@@ -83,6 +83,10 @@ This time, the ``command not found`` error should be replaced by information on 
 
 ## Installing RStudio
 
+Now let's install RStudio - the most popular IDE (Integrated Development Environment) for the R language. If you already have RStudio installed, you can skip this section.
+
+
+
 ## Installing LaTeX
 
 # Windows
@@ -92,3 +96,9 @@ This time, the ``command not found`` error should be replaced by information on 
 ## Installing RStudio
 
 ## Installing LaTeX
+
+# Setting Up Your Workspace
+
+## Folder Hierarchy
+
+## Packages

@@ -1,2 +1,3 @@
 # Intro Stats
-A repo containing instructional materials for Amherst students taking introductory Statistics classes
+
+Instructions for installing R and RStudio locally for Amherst students [here](https://mcgirjau.github.io/intro-stats/)

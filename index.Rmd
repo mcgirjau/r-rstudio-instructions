@@ -13,7 +13,7 @@ urlcolor: blue
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-This is a guide to installing R and RStudio locally, on your own machine. Instructions for both Mac and Windows machines are included, as well as plenty of screenshots to make the process easy to follow.
+This is a guide to installing R and RStudio locally, on your own machine. Instructions for both Mac and Windows machines are included, as well as plenty of screenshots to make the process easy to follow. Instructions for Linux distros are not provided, but presumably if you use Linux you're knowledgeable enough about computers to be able to figure out stuff on your own.
 
 # macOS
 
@@ -167,13 +167,73 @@ R should now be installed on your machine! Just to double check, click on the *S
 
 ## Installing RStudio
 
+Now let's install RStudio - the most popular IDE (Integrated Development Environment) for the R language. If you already have RStudio installed, you can skip this section.
+
+Go to https://rstudio.com/products/rstudio/download/, and scroll down until you see the download options. We will be downloading RStudio Desktop (Open Source License), since it is free - click the big blue *Download* button.
+
+![](img/win14.png)
+
+This takes us to a list of downloads for different platforms - choose the one that says *RStudio 1.2.5019 - Windows 10/8/7 (64-bit)*. This will download a .exe file onto your machine. 
+
+![](img/win15.png)
+
+Double click on the .exe file in the downloads pane, or wherever you downloaded it to, to start the installer. Click *Next*.
+
+![](img/win16.png)
+
+You will be prompted to choose a location for your installation - the setup wizard usually picks a good place by default (usually in your *Program Files* directory), so you needn't modify anything here unless you specifically want your RStudio installation in a different place. Also, make sure you have enough disk space available - RStudio requires a significant 777 Mb. Click *Next*.
+
+![](img/win17.png)
+
+The setup wizard will create a shortcut in your Start Menu. You can leave everything as it is, and click *Next*.
+
+![](img/win18.png)
+
+The setup wizard will now do its thing. This shouldn't take too long.
+
+![](img/win19.png)
+
+Once the installation is complete, click *Finish* to quit the setup wizard.
+
+![](img/win20.png)
+
 # Installing LaTeX
 
-LaTeX is ...
+LaTeX is a system for typing up high-quality documents. We need LaTeX in R in order to be able to knit R Markdown documents to pdf. If we try to knit a .Rmd file to .pdf before installing LaTeX, we get the following error:
 
-We need LaTeX in R because ...
+![](img/win21.png)
 
-While LaTeX installations are platform-dependent, installing it for the sole purpose of use in R Markdown can be done very easily in a platform-independent way from within RStudio.
+While LaTeX installations are platform-dependent, installing it for the sole purpose of use in R Markdown can be done very easily in a platform-independent way from within RStudio. Just open up RStudio, and type the following code into the console:
+
+```{r, eval=FALSE}
+tinytex::install_tinytex()
+```
+
+The installer will start. You will see something like this (note that this screenshot is taken from a Windows computer, it might look a tad different on a Mac):
+
+![](img/win22.png)
+
+For Windows PCs only, you might see the following dialog box pop up. Just click *Ok*.
+
+![](img/win23.png)
+
+As the dialog box mentioned, you'll see two more error dialog boxes. Don't worry about them - just ignore whatever they say and click *Ok* for both.
+
+![](img/win24.png)
+
+![](img/win25.png)
+
+Once everything is done, you should see the prompt (i.e. the funny ``>`` symbol in the console after which you type commands), as well as the following message:
+
+![](img/win26.png)
+
+Now quit RStudio by pressing ``Cmd + Q`` on a Mac or ``Alt + F4`` on Windows, and then reopen it. To check whether your installation was successful, now type into the console:
+
+```{r, eval=FALSE}
+tinytex:::is_tinytex()
+```
+
+You should see the output ``[1] TRUE``.
 
 # Setting Up Your Workspace
 

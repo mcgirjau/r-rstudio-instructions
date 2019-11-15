@@ -5,6 +5,8 @@ output:
   html_document:
     css: style.css
     toc: true
+    toc_float: true
+    toc_collapsed: true
 urlcolor: blue
 ---
 
@@ -283,7 +285,7 @@ Note that RStudio always tells you the current directory you are in at the top o
 
 ![](img/home6.png)
 
-## Transferring Files from the RStudio Server
+## Transferring Files from the Server
 
 ## Packages
 

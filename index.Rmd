@@ -278,7 +278,9 @@ Every class-related file that you get, make sure to put inside this newly create
 
 ![](img/home5.png)
 
-Note that RStudio always tells you the current directory you are in at the top of the *Files* pane. So even if you're deep into  many many nested directories, you will always know where you are in relation to your home directory.
+Note that RStudio always tells you the current directory you are in at the top of the *Files* pane. So even if you're deep into many many nested directories, you will always know where you are in relation to your home directory.
+
+![](img/home6.png)
 
 ## Transferring Files from the RStudio Server
 

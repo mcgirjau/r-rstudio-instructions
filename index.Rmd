@@ -238,11 +238,81 @@ You should see the output ``[1] TRUE``.
 
 # Setting Up Your Workspace
 
-## Folder Hierarchy
+## Directories
+
+It's good to be organized when saving your files - so let's briefly go over the folder hierarchy.
+
+RStudio has what is called the *Files* pane, usually in the bottom right of your screen. My setup probably looks a little different than yours, since I moved some stuff around and also have a theme applied, but the *Files* pane should be in the same place.
+
+![](img/files.png)
+
+That's basically your computer - same thing as opening up a Finder window on Mac, or a File Explorer window on Windows, only now you can browse through your files from within another program. The place in your computer that will be displayed by default is what is known as your *Home directory* (directory is just a fancy name for folder) - this is usually ``/Users/yourname``. To find out where your *Home* is, type the following into your console:
+
+```{r, eval=FALSE}
+getwd()
+```
+
+This actually prints your *Working directory*, not your *Home directory*, but by default (or unless you changed it manually), your working directory should be your home directory. 
+
+So what's the difference between the two? Well, your home directory is fixed - you always start out there. In a way, everytime you turn on your computer, that's where you "spawn". If you open up the terminal on a Mac or the Command Line on a Windows machine, that's the place you are in by default. It is, quite literally, your home. 
+
+From your home, you can of course travel to many different places. That's the idea of a working directory. You won't always be working directly in your home - you might be working in a subfolder. So then that subfolder that you're currently working on will be your working directory. There can be many working directories (any of the folders in your computer that you decide to work in), but there can only be one home directory.
+
+As mentioned before, it's a good idea to be organized with your files. I suggest having one different folder for every course you are taking that requires you work in R. Within the files pane, make sure you are in the home directory (you can quickly get there from anywhere else by clicking on the nice little house icon).
+
+![](img/home1.png)
+
+Now click on *New Folder*.
+
+![](img/home2.png)
+
+You will be prompted for a folder name - call it ``STAT135`` (or whatever else you wish, just make sure you know what it stands for). As a general guideline, it's good practice to not include spaces in your folder names. That makes working with them at the command line easier, but if you don't think you'll be doing any sort of programming later on, I guess spaces wouldn't hurt too much. Click *Ok*.
+
+![](img/home3.png)
+
+Now a folder has been created for you - you can check that it exists in the *Files* pane. That folder isn't only in RStudio, it actually exists now on your machine, so you can access it with Finder of File Explorer as well! We just used RStudio as a tool to create it. 
+
+![](img/home4.png)
+
+Every class-related file that you get, make sure to put inside this newly created folder. That way, you'll always know where to find something. Within the STAT135 folder, you can go ahead and create other subfolders if you so please. I like to have separate folders for my class notes, for the homework, and for in-class activities, but it's up to you if and how you want to organize your files.
+
+![](img/home5.png)
+
+Note that RStudio always tells you the current directory you are in at the top of the *Files* pane. So even if you're deep into  many many nested directories, you will always know where you are in relation to your home directory.
+
+## Transferring Files from the RStudio Server
 
 ## Packages
 
-## Transferring Files from the RStudio Server
+To use functions bundled up in a specific package, you need to load that package in your R session using the command ``library(name_of_package)``. But to be able to do that, you need to have that specific package installed on your computer - you can do this with the ``install.packages("name_of_package")`` command. Note that ``install.packages()`` requires that you surround the package name in (single or double) quotes.
+
+There's a bunch of packages you have been using throughout the Intro Stats course, and they will be needed if you try to knit your previous homeworks to .pdf. They're also generally useful to have, if you plan on taking more Stats courses in the future. You can install all of them by copying and pasting the following code chunk into your console.
+
+```{r, eval=FALSE}
+packages <- c("tidyverse", # everyday data analysis
+              "mosaic", # simpler functions for Intro Stats
+              "kableExtra", # beautifully formatted tables
+              "cowplot", # image manipulation
+              "RCurl", # fetching data from the Web
+              "GLMsData", # datasets
+              "GGally") # extensions for plots
+
+install.packages(packages)
+```
+
+(Note that ``tidyverse`` is actually a collection of packages (``ggplot2, dplyr, tidyr, readr, forcats, purr, stringr, tibble``), and it will install all of them in one go. They're all good packages to have installed - a lot of data analysis nowadays relies on the Tidyverse packages.)
+
+Wait until R is done installing everything - this might take a while. Once everything is done, you'll see the prompt ``>`` reappear in the console.
+
+![](img/packages1.png)
+
+Now you can use any of those packages in your .Rmd files simply by including a ``library(name_of_package)`` somewhere in your document (note that quotes are not necessary here, unlike with ``install.packages``, but you can still use them if you'd like). It is good styleto put all the ``library()`` statements in your preamble, like this:
+
+![](img/packages2.png)
+
+Sometimes, when you are working on an .Rmd file that attempts to load a package that you do not have installed, RStudio will let you know - you will see the following notification at the top of your screen. It suffices just to click install, and RStudio will take care of the missing packages for you.
+
+![](img/packages3.png)
 
 # Optional
 

@@ -303,13 +303,13 @@ packages <- c("tidyverse", # everyday data analysis
 install.packages(packages)
 ```
 
-(Note that ``tidyverse`` is actually a collection of packages (``ggplot2, dplyr, tidyr, readr, forcats, purr, stringr, tibble``), and it will install all of them in one go. They're all good packages to have installed - a lot of data analysis nowadays relies on the Tidyverse packages.)
+(Note that ``tidyverse`` is actually a collection of packages (``ggplot2``, ``dplyr``, ``tidyr``, ``readr``, ``forcats``, ``purr``, ``stringr``, ``tibble``), and it will install all of them in one go. They're all good packages to have installed - a lot of data analysis nowadays relies on the Tidyverse packages.)
 
 Wait until R is done installing everything - this might take a while. Once everything is done, you'll see the prompt ``>`` reappear in the console.
 
 ![](img/packages1.png)
 
-Now you can use any of those packages in your .Rmd files simply by including a ``library(name_of_package)`` somewhere in your document (note that quotes are not necessary here, unlike with ``install.packages``, but you can still use them if you'd like). It is good styleto put all the ``library()`` statements in your preamble, like this:
+Now you can use any of those packages in your .Rmd files simply by including a ``library(name_of_package)`` somewhere in your document (note that quotes are not necessary here, unlike with ``install.packages``, but you can still use them if you'd like). It is good style to put all the ``library()`` statements in your preamble, like this:
 
 ![](img/packages2.png)
 

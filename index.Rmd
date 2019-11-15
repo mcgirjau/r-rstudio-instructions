@@ -206,6 +206,7 @@ LaTeX is a system for typing up high-quality documents. We need LaTeX in R in or
 While LaTeX installations are platform-dependent, installing it for the sole purpose of use in R Markdown can be done very easily in a platform-independent way from within RStudio. Just open up RStudio, and type the following code into the console:
 
 ```{r, eval=FALSE}
+install.packages("tinytex")
 tinytex::install_tinytex()
 ```
 

@@ -5,7 +5,6 @@ output:
   html_document:
     css: style.css
     toc: true
-fontsize: 14pt
 urlcolor: blue
 ---
 
@@ -14,6 +13,8 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 This is a guide to installing R and RStudio locally, on your own machine. Instructions for both Mac and Windows machines are included, as well as plenty of screenshots to make the process easy to follow. Instructions for Linux distros are not provided, but presumably if you use Linux you're knowledgeable enough about computers to be able to figure out stuff on your own.
+
+<strong style="color:red">A word of warning:</strong> The Amherst RStudio server uses R version 3.5.2, but the one we will be installing in this guide is version 3.6.1. It just so happens that R changed the way it implements randomization algorithms in version 3.6, so functions involving random numbers (e.g. ``sample()``, ``shuffle()``, or ``rnorm()`` ) will yield different results when run locally than when run on the server (even with the same argument to ``set.seed()``). Be mindful of this if your homework includes working with random numbers, and let the professor know if you think something that's technically correct has been marked as wrong by the graders - answers are bound to differ between students working on the server and those working locally, and both should be accepted.
 
 # macOS
 

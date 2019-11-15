@@ -1,5 +1,7 @@
 body {
-  font-size: 14pt;
+  font-size: 13pt;
+  font-family: Times;
+  text-align: justify;
 }
 
 img {

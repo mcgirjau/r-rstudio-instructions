@@ -11,3 +11,4 @@ Instructions are included for:
 - customizing RStudio
 - using GitHub with RStudio
 
+Please let me know if something isn't working right, you ran into some sort of error, or you believe some part of the guide is not up to date.

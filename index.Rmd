@@ -241,6 +241,110 @@ You should see the output ``[1] TRUE``.
 
 # Setting Up Your Workspace
 
+## Packages You Might Need
+
+To use functions bundled up in a specific package, you need to load that package in your R session using the command ``library(name_of_package)``. But to be able to do that, you need to have that specific package installed on your computer - you can do this with the ``install.packages("name_of_package")`` command. Note that ``install.packages()`` requires that you surround the package name in (single or double) quotes.
+
+There's a bunch of packages you have been using throughout the Intro Stats course, and they will be needed if you try to knit your previous homeworks to .pdf. They're also generally useful to have, if you plan on taking more Stats courses in the future. You can install all of them by copying and pasting the following code chunk into your console.
+
+```{r, eval=FALSE}
+packages <- c("tidyverse", # everyday data analysis
+              "mosaic", # simpler functions for Intro Stats
+              "kableExtra", # beautifully formatted tables
+              "cowplot", # image manipulation
+              "RCurl", # fetching data from the Web
+              "GLMsData", # datasets
+              "GGally") # extensions for plots
+
+install.packages(packages)
+```
+
+(Note that ``tidyverse`` is actually a collection of packages (``ggplot2``, ``dplyr``, ``tidyr``, ``readr``, ``forcats``, ``purr``, ``stringr``, ``tibble``), and it will install all of them in one go. They're all good packages to have installed - a lot of data analysis nowadays relies on the Tidyverse packages.)
+
+Wait until R is done installing everything - this might take a while. Once everything is done, you'll see the prompt ``>`` reappear in the console.
+
+![](img/packages1.png)
+
+Now you can use any of those packages in your .Rmd files simply by including a ``library(name_of_package)`` somewhere in your document (note that quotes are not necessary here, unlike with ``install.packages``, but you can still use them if you'd like). It is good style to put all the ``library()`` statements in your preamble, like this:
+
+![](img/packages2.png)
+
+Sometimes, when you are working on an .Rmd file that attempts to load a package that you do not have installed, RStudio will let you know - you will see the following notification at the top of your screen. It suffices just to click install, and RStudio will take care of the missing packages for you.
+
+![](img/packages3.png)
+
+## Customizing RStudio
+
+The way RStudio is right out of the box is neither particularly nice nor helpful. 
+
+### Theme
+
+A first thing I suggest you do is change your theme. The bright white theme that RStudio defaults to is not very great for your eyes if you spend a lot of time working looking at it, so a dark theme would be better. 
+
+To change your theme, go to `Tools > Global Options` in the RStudio menu. You can get there quickly by pressing `Cmd + ,` on a Mac. Unfortunately, there's no keyboard shortcut for Windows.
+
+![](img/customize1.png)
+
+A small window will pop up. Click on *Appearance* in the menu on the left hand side of this window.
+
+![](img/customize2.png)
+
+You will now have access to a bunch of options that control the way RStudio looks, e.g. font, font size etc. To change the theme, look under *Editor theme* - there, you will find a list of all the available themes. Everytime you click on one, e.g. *Dracula*, you will be shown a preview of what the code will look like on the right hand side of the window. Feel free to explore the list and pick the theme that you'd be most comfortable using. Again, I suggest you pick a dark theme since it's better for your eyes.
+
+![](img/customize3.png)
+
+Once you have found the theme you most fancy, make sure you select it by clicking on it. For example, in the screenshot below, I have selected the theme "Twilight". Then click *Ok*.  Changes should take effect immediately.
+
+![](img/customize4.png)
+
+### Pane Layout
+
+Another very important thing for you to do is to reorganize the pane layout. The interface of RStudio is split up into 4 areas. By default, these 4 areas are: *Source*, *Console*, *Environment and History*, and *Everything else (Files, Plots, Packages, Help, Viewer etc.)*, as you can see in the screenshot below. 
+
+![](img/customize5.png)
+
+This is, in my opinion, not a great layout. I'll explain why in a second. First, let's take a look at what each component does:
+
+1. In the *Source* pane is where you write your code, e.g. when you work on an .Rmd file for your homework.
+2. The *Console* is basically like a playground for you to experiment with pieces of code.
+3. All the objects you have created (i.e. variables or functions) are listed in the *Environment*.
+4. All the commands you have executed are listed in chronological order in the *History* pane.
+5. If you're using Git with your project, a *Git* pane will also show up here telling you what files need to be commited (don't worry if you don't understand what this means - you don't really need to).
+6. You can access the files on your computer from within the *Files* pane.
+7. *Plots* is where the graphs will show up if you run commands like `gf_point()` at the console.
+8. *Connections* is where your connections will show up. You probably won't be using this much so don't worry about it.
+9. *Packages* is where all the installed packages show up. There's a tick next to a package if that package is loaded in your current R session. Checking one of these boxes is equivalent to running `library(package-name)` into the console.
+10. *Help* is where help pages show up when you run `?command_name` or `help(command_name)` in the console.
+11. You can preview files in the *Viewer* pane.
+
+The most important two panes are *Source* and *Console* - that's where most of the action happens. The default RStudio layout splits the left side of the screen between these two very important panes, and, as a result, neither of them get the space they deserve. You're mostly not going to be using the right hand side of the screen much, so all that space is going to waste. This is why it's better to reorganize the panes as follows:
+
+Again, go to `Tools > Global Options` in the RStudio menu (`Cmd + ,` on a Mac). 
+
+![](img/customize1.png)
+
+Now click on *Pane Layout* in the left hand side menu.
+
+![](img/customize6.png)
+
+In the top left pane, select *Console* from the dropdown menu. This will move the console to the top right hand side, making more space for the *Source* pane on the left. *Environment and History* will get moved to where the console used to be (bottom left).
+
+![](img/customize7.png)
+
+Now as a last change, check the *Environment* box in the bottom right pane. This moves the environment tab over to the left. 
+
+![](img/customize8.png)
+
+Now, click *Ok* for the changes to take effect.
+
+![](img/customize9.png)
+
+Make sure you collapse the bottom left pane by pressing the small rectangular icon on the top bar of the pane - those are the least important tabs so it's only fair we move them out of the way. 
+
+![](img/customize10.png)
+
+Look how much space there is for the *Source* pane now, and you still get access to the most important panes (*Console*, *Environment*, *Files*, *Help* etc.) on the right hand side!
+
 ## Directories
 
 It's good to be organized when saving your files - so let's briefly go over the folder hierarchy.
@@ -287,40 +391,12 @@ Note that RStudio always tells you the current directory you are in at the top o
 
 ## Transferring Files from the Server
 
-## Packages
+Now you should move all the files you have on the server to your machine.
 
-To use functions bundled up in a specific package, you need to load that package in your R session using the command ``library(name_of_package)``. But to be able to do that, you need to have that specific package installed on your computer - you can do this with the ``install.packages("name_of_package")`` command. Note that ``install.packages()`` requires that you surround the package name in (single or double) quotes.
+### MacOS
 
-There's a bunch of packages you have been using throughout the Intro Stats course, and they will be needed if you try to knit your previous homeworks to .pdf. They're also generally useful to have, if you plan on taking more Stats courses in the future. You can install all of them by copying and pasting the following code chunk into your console.
 
-```{r, eval=FALSE}
-packages <- c("tidyverse", # everyday data analysis
-              "mosaic", # simpler functions for Intro Stats
-              "kableExtra", # beautifully formatted tables
-              "cowplot", # image manipulation
-              "RCurl", # fetching data from the Web
-              "GLMsData", # datasets
-              "GGally") # extensions for plots
 
-install.packages(packages)
-```
-
-(Note that ``tidyverse`` is actually a collection of packages (``ggplot2``, ``dplyr``, ``tidyr``, ``readr``, ``forcats``, ``purr``, ``stringr``, ``tibble``), and it will install all of them in one go. They're all good packages to have installed - a lot of data analysis nowadays relies on the Tidyverse packages.)
-
-Wait until R is done installing everything - this might take a while. Once everything is done, you'll see the prompt ``>`` reappear in the console.
-
-![](img/packages1.png)
-
-Now you can use any of those packages in your .Rmd files simply by including a ``library(name_of_package)`` somewhere in your document (note that quotes are not necessary here, unlike with ``install.packages``, but you can still use them if you'd like). It is good style to put all the ``library()`` statements in your preamble, like this:
-
-![](img/packages2.png)
-
-Sometimes, when you are working on an .Rmd file that attempts to load a package that you do not have installed, RStudio will let you know - you will see the following notification at the top of your screen. It suffices just to click install, and RStudio will take care of the missing packages for you.
-
-![](img/packages3.png)
-
-# Optional
-
-## Customizing RStudio
+### Windows
 
 ## Using GitHub with RStudio

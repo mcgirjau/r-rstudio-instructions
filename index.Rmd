@@ -432,3 +432,25 @@ You'll again be taken back to the main window. Click *Ok* to close it.
 ![](img/git7.png)
 
 Now you need to register this key within GitHub. Log into your account (I won't show you how to do thta - I assume you know how) and go to *Settings*.
+
+![](img/git8.png)
+
+In the left hand side menu, click on *SSH and GPG keys*.
+
+![](img/git9.png)
+
+Now click the big green button that says *New SSH Key*.
+
+![](img/git10.png)
+
+This will take you to a page where you can register your SSH key. Give it a title, such as "R Studio Local", so you remember what the key is for, and then paste the key into the large text area provided (`Cmd + V` on Mac, `Ctrl + V` on Windows). Then click on *Add SSH key* at the bottom.
+
+![](img/git11.png)
+
+You will be asked to confirm your password.
+
+![](img/git12.png)
+
+Now you should be ready to use RStudio with GitHub. Go to one of your repositories that you'd like to work on locally, and click on the green button that says *Clone or download*, and then click on *Use SSH*.
+
+

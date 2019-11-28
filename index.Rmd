@@ -18,9 +18,7 @@ This is a guide to installing R and RStudio locally, on your own machine. Instru
 
 <strong style="color:red">A word of warning:</strong> The Amherst RStudio server uses R version 3.5.2, but the one we will be installing in this guide is version 3.6.1. It just so happens that R changed the way it implements randomization algorithms in version 3.6, so functions involving random numbers (e.g. ``sample()``, ``shuffle()``, or ``rnorm()`` ) will yield different results when run locally than when run on the server (even with the same argument to ``set.seed()``). Be mindful of this if your homework includes working with random numbers, and let the professor know if you think something that's technically correct has been marked as wrong by the graders - answers are bound to differ between students working on the server and those working locally, and both should be accepted.
 
-# macOS
-
-## Installing R
+# Installing R (for MacOS)
 
 If you already have R installed, skip this section and go straight to installing RStudio. To check whether you have R, open the Terminal and type:
 
@@ -84,33 +82,7 @@ R --version
 
 This time, the ``command not found`` error should be replaced by information on the R version you're running on your machine.
 
-## Installing RStudio
-
-Now let's install RStudio - the most popular IDE (Integrated Development Environment) for the R language. If you already have RStudio installed, you can skip this section.
-
-Go to https://rstudio.com/products/rstudio/download/, and scroll down until you see the download options. We will be downloading RStudio Desktop (Open Source License), since it is free - click the big blue *Download* button.
-
-![](img/mac11.png)
-
-This takes us to a list of downloads for different platforms - choose the one that says *RStudio 1.2.5019 - macOS 10.12+ (64-bit)*. This will download a .dmg file onto your machine. 
-
-![](img/mac12.png)
-
-Double click on the .dmg file in the downloads pane, or wherever you downloaded it to, to start the installer. Again, if you've installed programs on your Mac before, this should be familiar territory. The installer will do its thing.
-
-![](img/mac13.png)
-
-A window like the one below will appear once everything is done. Click and drag the *RStudio.app* icon into the Applications folder.
-
-![](img/mac14.png)
-
-Don't forget to eject the installer at the very end - right click onto the disk icon that appeared on your Desktop during installation, and select *Eject "RStudio-1.2.5019"*.
-
-![](img/mac15.png)
-
-# Windows
-
-## Installing R
+# Installing R (for Windows)
 
 If you already have R installed, skip this section and go straight to installing RStudio. To check whether you have R, click on the *Start* menu at the bottom left of your desktop, and check whether R appears in the list of all programs. If it does, it means that R is already installed on your computer - clicking on it once will reveal which version it is. It's good to make sure you have the latest version installed - if your version is lower than 3.6.1, it might be a good idea to do a fresh reinstall of R.
 
@@ -168,7 +140,31 @@ Once the installation is complete, click *Finish* to quit the setup wizard.
 
 R should now be installed on your machine! Just to double check, click on the *Start* menu at the bottom left of your desktop, and make sure that R appears in the list of all programs.
 
-## Installing RStudio
+# Installing RStudio (for MacOS)
+
+Now let's install RStudio - the most popular IDE (Integrated Development Environment) for the R language. If you already have RStudio installed, you can skip this section.
+
+Go to https://rstudio.com/products/rstudio/download/, and scroll down until you see the download options. We will be downloading RStudio Desktop (Open Source License), since it is free - click the big blue *Download* button.
+
+![](img/mac11.png)
+
+This takes us to a list of downloads for different platforms - choose the one that says *RStudio 1.2.5019 - macOS 10.12+ (64-bit)*. This will download a .dmg file onto your machine. 
+
+![](img/mac12.png)
+
+Double click on the .dmg file in the downloads pane, or wherever you downloaded it to, to start the installer. Again, if you've installed programs on your Mac before, this should be familiar territory. The installer will do its thing.
+
+![](img/mac13.png)
+
+A window like the one below will appear once everything is done. Click and drag the *RStudio.app* icon into the Applications folder.
+
+![](img/mac14.png)
+
+Don't forget to eject the installer at the very end - right click onto the disk icon that appeared on your Desktop during installation, and select *Eject "RStudio-1.2.5019"*.
+
+![](img/mac15.png)
+
+# Installing RStudio (for Windows)
 
 Now let's install RStudio - the most popular IDE (Integrated Development Environment) for the R language. If you already have RStudio installed, you can skip this section.
 
@@ -239,9 +235,7 @@ tinytex:::is_tinytex()
 
 You should see the output ``[1] TRUE``.
 
-# Setting Up Your Workspace
-
-## Packages You Might Need
+# Installing Required Packages
 
 To use functions bundled up in a specific package, you need to load that package in your R session using the command ``library(name_of_package)``. But to be able to do that, you need to have that specific package installed on your computer - you can do this with the ``install.packages("name_of_package")`` command. Note that ``install.packages()`` requires that you surround the package name in (single or double) quotes.
 
@@ -273,11 +267,9 @@ Sometimes, when you are working on an .Rmd file that attempts to load a package 
 
 ![](img/packages3.png)
 
-## Customizing RStudio
+# Customizing RStudio - Theme
 
 The way RStudio is right out of the box is neither particularly nice nor helpful. 
-
-### Theme
 
 A first thing I suggest you do is change your theme. The bright white theme that RStudio defaults to is not very great for your eyes if you spend a lot of time working looking at it, so a dark theme would be better. 
 
@@ -297,7 +289,7 @@ Once you have found the theme you most fancy, make sure you select it by clickin
 
 ![](img/customize4.png)
 
-### Pane Layout
+# Customizing RStudio - Layout
 
 Another very important thing for you to do is to reorganize the pane layout. The interface of RStudio is split up into 4 areas. By default, these 4 areas are: *Source*, *Console*, *Environment and History*, and *Everything else (Files, Plots, Packages, Help, Viewer etc.)*, as you can see in the screenshot below. 
 
@@ -345,7 +337,7 @@ Make sure you collapse the bottom left pane by pressing the small rectangular ic
 
 Look how much space there is for the *Source* pane now, and you still get access to the most important panes (*Console*, *Environment*, *Files*, *Help* etc.) on the right hand side!
 
-## Directories
+# Directory Structure
 
 It's good to be organized when saving your files - so let's briefly go over the folder hierarchy.
 
@@ -389,14 +381,54 @@ Note that RStudio always tells you the current directory you are in at the top o
 
 ![](img/home6.png)
 
-## Transferring Files from the Server
+# Transferring Files from the Server
 
-Now you should move all the files you have on the server to your machine.
+Now you should move all the files you have on the server to your machine. One very straightforward way to do that is to just log on to the RStudio server (if it decides to work at that particular moment),  
 
-### MacOS
+For Mac users, there's also two other ways, should the RStudio server not be currently available. Unfortunately, if you're a Windows user, this will not work for you. The reason is that the college's server is UNIX-based, as are Macs, so integration between the two is very easy. Windows is not UNIX-based, so it's more difficult to access a remote UNIX server... If you have a Windows machine, the easiest way to download your files is the RStudio server is down at the moment
 
+So, if you have a Mac, let's get into the other options you have for transferring your files.
 
+## Download (MacOS and Windows)
 
-### Windows
+## Mapping Drives (MacOS only)
 
-## Using GitHub with RStudio
+## Using the Terminal (MacOS only)
+
+# Using Git with RStudio
+
+If you're reading this section, I'm assuming you know what Git and GitHub are, and how to use them from the terminal/Git bash. If you don't know what these tools are, don't worry - they're specialized version control tools and you probably don't need any knowledge of them in an Intro Stats class. This section is for those that specifically already use Git but don't know how to integrate it with RStudio.
+
+First, you must generate an SSH RSA key within your local RStudio installation. Go to `Tools > Global Options` in the RStudio menu (`Cmd + ,` on a Mac).
+
+![](img/customize1.png)
+
+In the left hand side menu, click on *Git/SVN*.
+
+![](img/git1.png)
+
+Make sure the box at the top (the one saying *Enable version control interface for RStudio projects*) is checked, and then click on *Create RSA Key...* under the *SSH RSA Key* section.
+
+![](img/git2.png)
+
+I recommend not using a passphrase since that will ask you for said passphrase everytime you commit something (which is quite inconvenient). There's no need for such security measures unless you're working on a public computer (which I assume you are not). Click *Create*.
+
+![](img/git3.png)
+
+You'll see some funny looking text. Click *Close*.
+
+![](img/git4.png)
+
+This will take you back to the Global Options window. Now clikc on *View Public Key*.
+
+![](img/git5.png)
+
+This will show you the SSH RSA key. Press `Cmd + C` on a Mac or `Ctrl + C` on Windows to copy the key. Then click *Close*.
+
+![](img/git6.png)
+
+You'll again be taken back to the main window. Click *Ok* to close it.
+
+![](img/git7.png)
+
+Now you need to register this key within GitHub. Log into your account (I won't show you how to do thta - I assume you know how) and go to *Settings*.

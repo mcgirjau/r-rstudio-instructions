@@ -1,6 +1,5 @@
 ---
-title: "Installing R and RStudio"
-subtitle: "A Guide for Students"
+title: "Intro Stats Technical Guide"
 output: 
   html_document:
     css: style.css
@@ -385,9 +384,7 @@ Note that RStudio always tells you the current directory you are in at the top o
 
 Now you should move all the files you have on the server to your machine. One very straightforward way to do that is to just log on to the RStudio server (if it decides to work at that particular moment),  
 
-For Mac users, there's also two other ways, should the RStudio server not be currently available. Unfortunately, if you're a Windows user, this will not work for you. The reason is that the college's server is UNIX-based, as are Macs, so integration between the two is very easy. Windows is not UNIX-based, so it's more difficult to access a remote UNIX server... If you have a Windows machine, the easiest way to download your files is the RStudio server is down at the moment
-
-So, if you have a Mac, let's get into the other options you have for transferring your files.
+For Mac users, there's also two other ways, should the RStudio server not be currently available. Unfortunately, if you're a Windows user, those ways will not work for you. The reason is that the college's server is UNIX-based, as are Macs, so integration between the two is very easy. Windows is not UNIX-based, so it's more difficult to access a remote UNIX server. If you have a Windows machine, the easiest way to get your server files on your local machine is by using the download method, whever the RStudio server is working. Otherwise, go to IT - they might be able to help you out in other ways.
 
 ## Download (MacOS and Windows)
 
@@ -453,4 +450,54 @@ You will be asked to confirm your password.
 
 Now you should be ready to use RStudio with GitHub. Go to one of your repositories that you'd like to work on locally, and click on the green button that says *Clone or download*, and then click on *Use SSH*.
 
+![](img/git13.png)
 
+Then click the icon to the side of the SSH key to copy it.
+
+![](img/git14.png)
+
+Now go to RStudio. In the top menu, go to `File > New Project...`. 
+
+![](img/git15.png)
+
+Choose *Version Control*.
+
+![](img/git16.png)
+
+Choose *Git*.
+
+![](img/git17.png)
+
+Now paste the key you copied from GitHub into the field that says "Repository URL" (`Cmd + V` on Mac, `Ctrl + V` on Windows). The Project directory name should get filled in automatically with the name of your repo. Choose whatever directory you would like to clone the repo in, and click *Create Project*.
+
+![](img/git18.png)
+
+Now everytime you work on a project with Git, you will see a *Git* tab appear in RStudio. If you followed the pane layout guide above, then your Git tab should appear in the bottom left corner. Otherwise, just look around for it - you'll spot it pretty easily. Note that you have to be within a version control project for the Git tab to appear. When you edit files as you work, you can click on the Git tab to see what's changed. Files marked with a blue M have been modified, files marked with a yellow question mark have been newly added, files marked with a red D have been deleted etc.
+
+![](img/git19.png)
+
+Check all the boxed by the files you want to add/commit.
+
+![](img/git20.png)
+
+Click *Commit*.
+
+![](img/git21.png)
+
+This will take you to a separate screen. You can write your commit message in the dedicated box at the top right of the screen, and then click *Commit*.
+
+![](img/git23.png)
+
+A Git dialog box will appear. Once everything is done, click *Close*.
+
+![](img/git24.png)
+
+Now push the changes to GitHub by clicking *Push* in the top right corner. 
+
+![](img/git25.png)
+
+Another Git dialog box will appear. Wait until everything is done, and click *Close*.
+
+![](img/git26.png)
+
+That's it! Now you should see your changes in the GitHub repo. Follow the same workflow for every Git project you have in RStudio.

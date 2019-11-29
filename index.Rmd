@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 This is a guide to installing R and RStudio locally, on your own machine. Instructions for both Mac and Windows machines are included, as well as plenty of screenshots to make the process easy to follow. Instructions for Linux distros are not provided, but presumably if you use Linux you're knowledgeable enough about computers to be able to figure out stuff on your own.
 
-<strong style="color:red">A word of warning:</strong> The Amherst RStudio server uses R version 3.5.2, but the one we will be installing in this guide is version 3.6.1. It just so happens that R changed the way it implements randomization algorithms in version 3.6, so functions involving random numbers (e.g. ``sample()``, ``shuffle()``, or ``rnorm()`` ) will yield different results when run locally than when run on the server (even with the same argument to ``set.seed()``). Be mindful of this if your homework includes working with random numbers, and let the professor know if you think something that's technically correct has been marked as wrong by the graders - answers are bound to differ between students working on the server and those working locally, and both should be accepted.
+<span style="color:red">A word of warning:</span> The Amherst RStudio server uses R version 3.5.2, but the one we will be installing in this guide is version 3.6.1. It just so happens that R changed the way it implements randomization algorithms in version 3.6, so functions involving random numbers (e.g. ``sample()``, ``shuffle()``, or ``rnorm()`` ) will yield different results when run locally than when run on the server (even with the same argument to ``set.seed()``). Be mindful of this if your homework includes working with random numbers, and let the professor know if you think something that's technically correct has been marked as wrong by the graders - answers are bound to differ between students working on the server and those working locally, and both should be accepted.
 
 # Installing R (for MacOS)
 
@@ -388,9 +388,89 @@ For Mac users, there's also two other ways, should the RStudio server not be cur
 
 ## Download (MacOS and Windows)
 
+The most straightforward way to get all your files from the server is simply by downloading them. Log into the RStudio server (if it's working at the moment), and then look at the *Files* pane in the bottom right corner. Check the box next to all the files and folders you want to download.
+
+![](img/transfer1.png)
+
+Now in the menu at the top of the pane, click `More > Export`.
+
+![](img/transfer2.png)
+
+If you selected multiple files or a folder, they will be downloaded as a zipped file (extension `.zip`). You can name that whatever you want. Click *Download*.
+
+![](img/transfer3.png)
+
+Save the file wherever you please.
+
+![](img/transfer4.png)
+
+You can now find it in your local *Downloads* folder, or wherever else you set your browser to download files.
+
+![](img/transfer5.png)
+
+Double clicking on the `.zip `file will unzip it and yield a normal folder. The files are now on your local machine, and you can now move them wherever you want in your system, as you please.
+
 ## Mapping Drives (MacOS only)
 
+Instructions taken from [the Amherst IT page](https://www.amherst.edu/offices/it/knowledge_base/academic-resources/unix_servers/unix_network_space). 
+
+<span style="color:red">Note that this method only works on-campus while connected to the Amherst network, or off-campus with a [VPN connection to the Amherst network](https://www.amherst.edu/offices/it/services/network/vpn).</span>
+
+Another way that works really nicely for Macs is mapping drives. Basically, you'll have all the server files mapped to your machine at all times, as if the server was just another folder in your memory. To begin, open the Finder menu, and go to `Go > Connect to Server...`.
+
+![](img/transfer6.png)
+
+In the text box that appears, type the address `smb://unix-mac.amherst.edu`. Then click *Connect*.
+
+![](img/transfer7.png)
+
+You might be prompted for your Amherst username and password. Enter those, and then a window will pop up asking you which volumes you want to mount. Select the one corresponding to your username, and click *Ok*.
+
+![](img/transfer8.png)
+
+Now if you open up a finder window, you'll see in the left hand side menu, under *Locations*, a link to *unix-mac.amherst.edu*. If you click there, you can access your server files locally, within that very same Finder window. You can now drag and drop the files to copy them wherever you want in a local directory, or you can just open them locally by double-clicking and proceed to work on them directly using your installation of RStudio.
+
+![](img/transfer9.png)
+
 ## Using the Terminal (MacOS only)
+
+Instructions taken from [the Amherst IT page](https://www.amherst.edu/academiclife/departments/computer_science/computing/mac). 
+
+Again, this method only works from a Mac. It might also work on Windows if you have a Linux client installed, like Cygwin. Through the terminal, you can issue a command to copy all of your server files onto your local machine. This is probably the simplest method, if you're comfortable with the terminal. Don't worry if you don't understand what the commands below do - you can simply copy and paste them in, without worrying about what they mean.
+
+Open up a fresh terminal window. You must create a directory to hold all of our files from the server - you can't just dump them all somewhere since that'd be messy. First, let's ensure you're in the home directory, by using the `cd` command. Type in the following and press `return`:
+
+```{bash, eval=FALSE}
+cd
+```
+
+Now, let's create a folder where we can put all of the server files. The `mkdir` command below creates a folder with the name *ServerFiles* into your current directory. Type it into the terminal and press `return`:
+
+```{bash, eval=FALSE}
+mkdir Server Files
+```
+
+Now change into the *ServerFiles* folder by again using the `cd` command followed by the name of the folder and then pressing `return`:
+
+```{bash, eval=FALSE}
+cd Server Files
+```
+
+You'll see the prompt will have probably changed. Now type the following into the terminal and press `return`. This command takes **every single file** you have on the server and puts it into the *ServerFiles* folder. **Make sure to replace `your-username` with your Amherst username, e.g. jsmith22!**
+
+```{bash, eval=FALSE}
+scp -r 'your-username@romulus.amherst.edu:*' .
+```
+
+You'll be asked for your Amherst account password. Enter that, and wait - you'll see a lot of output as the server dumps every file you have on it locally. This might take a while, depending on how much stuff you have on the server, so feel free to go make some tea or buy a drink. If it's taking waaaay too long, you can terminate the process by pressing `Ctrl + C`.
+
+If you know you only want one specific folder, you can instead use the following command, which is much faster since it doesn't copy every single thing on the server:
+
+```{bash, eval=FALSE}
+scp -r 'your-username@romulus.amherst.edu:directory-name' .
+```
+
+All your server files will now be in the *ServerFiles* folder, which in turn is in the home directory.
 
 # Using Git with RStudio
 

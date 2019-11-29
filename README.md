@@ -21,7 +21,6 @@ topics:
       - Through the command line (MacOS only)
   - Using GitHub with RStudio
 
-Please let me know if something isn’t working right, if you ran into
-some sort of error, or if you believe some part of the guide is
-outdated, by [opening an
-issue](https://github.com/mcgirjau/intro-stats/issues).
+Please [open an issue](https://github.com/mcgirjau/intro-stats/issues)
+to let me know if something isn’t working right, if you ran into some
+sort of error, or if you believe some part of the guide is outdated.

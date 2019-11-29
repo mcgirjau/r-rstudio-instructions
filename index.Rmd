@@ -5,7 +5,6 @@ output:
     css: style.css
     toc: true
     toc_float: true
-    toc_collapsed: true
 urlcolor: blue
 ---
 
@@ -13,43 +12,43 @@ urlcolor: blue
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-This is a guide to installing R and RStudio locally, on your own machine. Instructions for both Mac and Windows machines are included, as well as plenty of screenshots to make the process easy to follow. Instructions for Linux distros are not provided, but presumably if you use Linux you're knowledgeable enough about computers to be able to figure out stuff on your own.
+This is a set of technical instructions to help you set up everything you might need for your Statistics classes (e.g. R, RStudio, LaTeX) on your local machine. 
 
-<span style="color:red">A word of warning:</span> The Amherst RStudio server uses R version 3.5.2, but the one we will be installing in this guide is version 3.6.1. It just so happens that R changed the way it implements randomization algorithms in version 3.6, so functions involving random numbers (e.g. ``sample()``, ``shuffle()``, or ``rnorm()`` ) will yield different results when run locally than when run on the server (even with the same argument to ``set.seed()``). Be mindful of this if your homework includes working with random numbers, and let the professor know if you think something that's technically correct has been marked as wrong by the graders - answers are bound to differ between students working on the server and those working locally, and both should be accepted.
+Instructions for both Mac and Windows operating systems are included, as well as plenty of screenshots to make the process easy to follow. Instructions for Linux distros are not provided, but presumably if you use Linux you're knowledgeable enough about computers to be able to figure out stuff on your own.
+
+<span style="color:red">A word of warning:</span> The Amherst RStudio server uses R version 3.5.2, but the one we will be installing in this guide is version 3.6.1. It just so happens that R changed the way it implements randomization algorithms in version 3.6, so functions involving random numbers (e.g. ``sample()``, ``shuffle()``, or ``rnorm()`` ) will yield different results when run locally than when run on the server (even with the same argument to ``set.seed()``). Be mindful of this if your homework includes working with random numbers, and let the professor know if you think something that's technically correct has been marked as wrong by the graders - answers are bound to differ between students working on the server and those working locally, but both should be accepted.
 
 # Installing R (for MacOS)
 
-If you already have R installed, skip this section and go straight to installing RStudio. To check whether you have R, open the Terminal and type:
+If you already have R installed, skip this section and go straight to installing RStudio. To check whether or not you have R on your machine, open the Terminal and type:
 
 ```{bash, eval=FALSE}
 R --version
 ```
 
-If you get a ``command not found`` error, that means you don't have R installed and you can proceed with the steps below. If R is already on your machine, it's good to make sure you have the latest version installed - if your version is lower than 3.6.1, it might be a good idea to do a fresh reinstall of R.
+If you get a `command not found` error, that means you don't have R installed and you can proceed with the steps below. If R is already on your machine, it's best to make sure you have the latest version - if your version is lower than 3.6.1, it might be a good idea to do a fresh reinstall of R.
 
 ![](img/mac0.png)
 
-Let's download R. Go to https://cloud.r-project.org/ and click on *Download R for (Mac) OS X*.
+Let's download R. Go to https://cloud.r-project.org/ and click on **Download R for (Mac) OS X**.
 
 ![](img/mac1.png)
 
-Click on the .pkg download of the latest R release (as of November 2019, that is 3.6.1, nicknamed "Action of the Toes" as a reference to [this Peanuts comic](https://www.gocomics.com/peanuts/1971/03/22)).
+Click on the `.pkg` download of the latest R release (as of November 2019, that is 3.6.1, nicknamed "Action of the Toes" as a reference to [this Peanuts comic](https://www.gocomics.com/peanuts/1971/03/22)).
 
-Now let's start the installation. Double click on the downloaded .pkg file in your browser's Download pane to start the installer.
+Now let's start the installation. Double click on the downloaded `.pkg` file in your browser's download pane to start the installer.
 
 ![](img/mac2.png)
 
-If you've ever installed anything on your Mac, you should be pretty comfortable with this process.
-
-Click *Continue*.
+If you've ever installed anything on your Mac, you should be pretty comfortable with this process. Click **Continue**.
 
 ![](img/mac3.png)
 
-Click *Continue* again...
+Click **Continue** again...
 
 ![](img/mac4.png)
 
-... and again one more time.
+...and again one more time.
 
 ![](img/mac5.png)
 
@@ -57,7 +56,7 @@ Agree to the terms of service - if you disagree, you cannot install R.
 
 ![](img/mac6.png)
 
-Finally, click *Install*. The installation is not big (just over 160Mb), but make sure you have sufficient disk space nonetheless.
+Finally, click **Install**. The installation is not big (just over 160Mb), but make sure you have sufficient disk space nonetheless.
 
 ![](img/mac7.png)
 
@@ -83,49 +82,47 @@ This time, the ``command not found`` error should be replaced by information on 
 
 # Installing R (for Windows)
 
-If you already have R installed, skip this section and go straight to installing RStudio. To check whether you have R, click on the *Start* menu at the bottom left of your desktop, and check whether R appears in the list of all programs. If it does, it means that R is already installed on your computer - clicking on it once will reveal which version it is. It's good to make sure you have the latest version installed - if your version is lower than 3.6.1, it might be a good idea to do a fresh reinstall of R.
+If you already have R installed, skip this section and go straight to installing RStudio. To check whether or not you have R, click on the *Start* menu at the bottom left of your desktop, and check whether R appears in the list of all programs. If it does, it means that R is already installed on your computer - clicking on it once will reveal which version it is. It's best to make sure you have the latest version installed - if your version is lower than 3.6.1, it might be a good idea to do a fresh reinstall of R.
 
-Let's download R. Go to https://cloud.r-project.org/ and click on *Download R for Windows*.
+Let's download R. Go to https://cloud.r-project.org/ and click on **Download R for Windows**.
 
 ![](img/win1.png)
 
-Now under *Subdirectories*, click the *base* link.
+Now under **Subdirectories**, click the **base** link.
 
 ![](img/win2.png)
 
-Click the link that says *Download R 3.6.1 for Windows* to download a .exe file.
+Click the link that says **Download R 3.6.1 for Windows** to download a `.exe` file.
 
 ![](img/win3.png)
 
-Now let's start the installation. Double click on the downloaded .exe file in your browser's Download pane, or wherever you saved it to, to open the setup wizard. When asked whether you allow this app to make changes to your device, click *Yes*. Note that you cannot do this unless you have administrator rights on your machine (which you should have if you're using your own laptop).
+Now let's start the installation. Double click on the downloaded `.exe` file in your browser's download pane, or wherever you saved it to, in order to open the setup wizard. When asked whether you allow this app to make changes to your device, click **Yes**. Note that you cannot do this unless you have administrator rights on your machine (which you should have if you're using your own laptop).
 
-<!-- ![](img/win4.png) -->
-
-You can use any language you want during installation, but this guide will be using English, so if you want to follow along it's best that you use English too.
+You can use any language you want during installation, but this guide will be using English, so if you want to follow along it's best that you use English too. Click **Ok**.
 
 ![](img/win5.png)
 
-Click *Next*.
+Click **Next**.
 
 ![](img/win6.png)
 
-You will be prompted to choose a location for your installation - the setup wizard usually picks a good place by default (usually in your *Program Files* directory), so you needn't modify anything here unless you specifically want your R installation in a different place. Click *Next*.
+You will be prompted to choose a location for your installation - the setup wizard usually picks a good place by default (usually in your **Program Files** directory), so you needn't modify anything here unless you specifically want your R installation in a different place. Click **Next**.
 
 ![](img/win7.png)
 
-You will now be prompted for which components you'd like to install - make sure all are selected (unless you specifically desire not to install certain components), and click *Next*.
+You will now be prompted for which components you'd like to install - make sure all are selected (unless you specifically desire not to install certain components), and click **Next**.
 
 ![](img/win8.png)
 
-Accept defaults for startup options, unless you know what you're doing. Click *Next*.
+Accept defaults for startup options, unless you know what you're doing. Click **Next**.
 
 ![](img/win9.png)
 
-The setup wizard will create a shortcut in your Start Menu. You can leave everything as it is, and click *Next*.
+The setup wizard will create a shortcut in your Start Menu. You can leave everything as it is, and click **Next**.
 
 ![](img/win10.png)
 
-If you want to create a Desktop shortcut, or a Quick Launch shortcut, make sure to select the appropriate checkboxes. Leave the bottom two checkboxes (under "Registry entries") selected. Click *Next*.
+If you want to create a Desktop shortcut, or a Quick Launch shortcut, make sure to select the appropriate checkboxes. Leave the bottom two checkboxes (under "Registry entries") selected. Click **Next**.
 
 ![](img/win11.png)
 
@@ -133,7 +130,7 @@ The setup wizard will now proceed to install everything appropriately. This shou
 
 ![](img/win12.png)
 
-Once the installation is complete, click *Finish* to quit the setup wizard.
+Once the installation is complete, click **Finish** to quit the setup wizard.
 
 ![](img/win13.png)
 
@@ -143,15 +140,15 @@ R should now be installed on your machine! Just to double check, click on the *S
 
 Now let's install RStudio - the most popular IDE (Integrated Development Environment) for the R language. If you already have RStudio installed, you can skip this section.
 
-Go to https://rstudio.com/products/rstudio/download/, and scroll down until you see the download options. We will be downloading RStudio Desktop (Open Source License), since it is free - click the big blue *Download* button.
+Go to https://rstudio.com/products/rstudio/download/, and scroll down until you see the download options. We will be downloading RStudio Desktop (Open Source License), since it is free - click the big blue **Download** button.
 
 ![](img/mac11.png)
 
-This takes us to a list of downloads for different platforms - choose the one that says *RStudio 1.2.5019 - macOS 10.12+ (64-bit)*. This will download a .dmg file onto your machine. 
+This takes us to a list of downloads for different platforms - choose the one that says **RStudio 1.2.5019 - macOS 10.12+ (64-bit)**. This will download a `.dmg` file onto your machine. 
 
 ![](img/mac12.png)
 
-Double click on the .dmg file in the downloads pane, or wherever you downloaded it to, to start the installer. Again, if you've installed programs on your Mac before, this should be familiar territory. The installer will do its thing.
+Double click on the `.dmg` file in the downloads pane, or wherever you downloaded it to, to start the installer. Again, if you've installed programs on your Mac before, this should be familiar territory. The installer will do its thing.
 
 ![](img/mac13.png)
 
@@ -159,7 +156,7 @@ A window like the one below will appear once everything is done. Click and drag 
 
 ![](img/mac14.png)
 
-Don't forget to eject the installer at the very end - right click onto the disk icon that appeared on your Desktop during installation, and select *Eject "RStudio-1.2.5019"*.
+Don't forget to eject the installer at the very end - right click onto the disk icon that appeared on your Desktop during installation, and select **Eject "RStudio-1.2.5019"**.
 
 ![](img/mac15.png)
 
@@ -167,23 +164,23 @@ Don't forget to eject the installer at the very end - right click onto the disk 
 
 Now let's install RStudio - the most popular IDE (Integrated Development Environment) for the R language. If you already have RStudio installed, you can skip this section.
 
-Go to https://rstudio.com/products/rstudio/download/, and scroll down until you see the download options. We will be downloading RStudio Desktop (Open Source License), since it is free - click the big blue *Download* button.
+Go to https://rstudio.com/products/rstudio/download/, and scroll down until you see the download options. We will be downloading RStudio Desktop (Open Source License), since it is free - click the big blue **Download** button.
 
 ![](img/win14.png)
 
-This takes us to a list of downloads for different platforms - choose the one that says *RStudio 1.2.5019 - Windows 10/8/7 (64-bit)*. This will download a .exe file onto your machine. 
+This takes us to a list of downloads for different platforms - choose the one that says **RStudio 1.2.5019 - Windows 10/8/7 (64-bit)**. This will download a `.exe` file onto your machine. 
 
 ![](img/win15.png)
 
-Double click on the .exe file in the downloads pane, or wherever you downloaded it to, to start the installer. Click *Next*.
+Double click on the `.exe` file in the downloads pane, or wherever you downloaded it to, to start the installer. Click **Next**.
 
 ![](img/win16.png)
 
-You will be prompted to choose a location for your installation - the setup wizard usually picks a good place by default (usually in your *Program Files* directory), so you needn't modify anything here unless you specifically want your RStudio installation in a different place. Also, make sure you have enough disk space available - RStudio requires a significant 777 Mb. Click *Next*.
+You will be prompted to choose a location for your installation - the setup wizard usually picks a good place by default (usually in your *Program Files* directory), so you needn't modify anything here unless you specifically want your RStudio installation in a different place. Also, make sure you have enough disk space available - RStudio requires a significant 777 Mb. Click **Next**.
 
 ![](img/win17.png)
 
-The setup wizard will create a shortcut in your Start Menu. You can leave everything as it is, and click *Next*.
+The setup wizard will create a shortcut in your Start Menu. You can leave everything as it is, and click **Next**.
 
 ![](img/win18.png)
 
@@ -191,13 +188,13 @@ The setup wizard will now do its thing. This shouldn't take too long.
 
 ![](img/win19.png)
 
-Once the installation is complete, click *Finish* to quit the setup wizard.
+Once the installation is complete, click **Finish** to quit the setup wizard.
 
 ![](img/win20.png)
 
 # Installing LaTeX
 
-LaTeX is a system for typing up high-quality documents. We need LaTeX in R in order to be able to knit R Markdown documents to pdf. If we try to knit a .Rmd file to .pdf before installing LaTeX, we get the following error:
+LaTeX is a system for typing up high-quality documents. We need LaTeX in R in order to be able to knit R Markdown documents to pdf. If we try to knit a `.Rmd` file to `.pdf` before installing LaTeX, we get the following error:
 
 ![](img/win21.png)
 
@@ -212,33 +209,33 @@ The installer will start. You will see something like this (note that this scree
 
 ![](img/win22.png)
 
-For Windows PCs only, you might see the following dialog box pop up. Just click *Ok*.
+For Windows PCs only, you might see the following dialog box pop up. Just click **Ok**.
 
 ![](img/win23.png)
 
-As the dialog box mentioned, you'll see two more error dialog boxes. Don't worry about them - just ignore whatever they say and click *Ok* for both.
+As the dialog box mentioned, you'll see two more error dialog boxes. Don't worry about them - just ignore whatever they say and click **Ok** for both.
 
 ![](img/win24.png)
 
 ![](img/win25.png)
 
-Once everything is done, you should see the prompt (i.e. the funny ``>`` symbol in the console after which you type commands), as well as the following message:
+Once everything is done, you should see the prompt (i.e. the funny `>` symbol in the console after which you type commands), as well as the following message:
 
 ![](img/win26.png)
 
-Now quit RStudio by pressing ``Cmd + Q`` on a Mac or ``Alt + F4`` on Windows, and then reopen it. To check whether your installation was successful, now type into the console:
+Now quit RStudio by pressing `Cmd + Q` on a Mac or `Alt + F4` on Windows, and then reopen it. To check whether your installation was successful, now type into the console:
 
 ```{r, eval=FALSE}
 tinytex:::is_tinytex()
 ```
 
-You should see the output ``[1] TRUE``.
+You should see the output `[1] TRUE`.
 
 # Installing Required Packages
 
-To use functions bundled up in a specific package, you need to load that package in your R session using the command ``library(name_of_package)``. But to be able to do that, you need to have that specific package installed on your computer - you can do this with the ``install.packages("name_of_package")`` command. Note that ``install.packages()`` requires that you surround the package name in (single or double) quotes.
+To use functions bundled up in a specific package, you need to load that package in your R session using the command `library(name_of_package)`. But to be able to do that, you first need to have that specific package installed on your computer - you can do this with the `install.packages("name_of_package")` command. Note that `install.packages()` requires that you surround the package name in (single or double) quotes.
 
-There's a bunch of packages you have been using throughout the Intro Stats course, and they will be needed if you try to knit your previous homeworks to .pdf. They're also generally useful to have, if you plan on taking more Stats courses in the future. You can install all of them by copying and pasting the following code chunk into your console.
+There's a bunch of packages you have been using throughout the Intro Stats course, and they will be needed if you try to knit your previous homeworks to `.pdf`. They're also generally useful to have, if you plan on taking more Stats courses in the future. You can install all of them by copying and pasting the following code chunk into your console.
 
 ```{r, eval=FALSE}
 packages <- c("tidyverse", # everyday data analysis
@@ -252,17 +249,17 @@ packages <- c("tidyverse", # everyday data analysis
 install.packages(packages)
 ```
 
-(Note that ``tidyverse`` is actually a collection of packages (``ggplot2``, ``dplyr``, ``tidyr``, ``readr``, ``forcats``, ``purr``, ``stringr``, ``tibble``), and it will install all of them in one go. They're all good packages to have installed - a lot of data analysis nowadays relies on the Tidyverse packages.)
+(Note that `tidyverse` is actually a collection of packages (`ggplot2`, `dplyr`, `tidyr`, `readr`, `forcats`, `purr`, `stringr`, `tibble`), and it will install all of them in one go. They're all good packages to have - a lot of data analysis nowadays relies on the Tidyverse packages.)
 
-Wait until R is done installing everything - this might take a while. Once everything is done, you'll see the prompt ``>`` reappear in the console.
+Wait until R is done installing everything - this might take a while. Once everything is done, you'll see the prompt `>` reappear in the console.
 
 ![](img/packages1.png)
 
-Now you can use any of those packages in your .Rmd files simply by including a ``library(name_of_package)`` somewhere in your document (note that quotes are not necessary here, unlike with ``install.packages``, but you can still use them if you'd like). It is good style to put all the ``library()`` statements in your preamble, like this:
+Now you can use any of those packages in your .Rmd files simply by including `library(name_of_package)` somewhere in your document (note that quotes are not necessary here, unlike with `install.packages`, but you can still use them if you'd like). It is good style to put all the `library()` statements in your preamble, like this:
 
 ![](img/packages2.png)
 
-Sometimes, when you are working on an .Rmd file that attempts to load a package that you do not have installed, RStudio will let you know - you will see the following notification at the top of your screen. It suffices just to click install, and RStudio will take care of the missing packages for you.
+Sometimes, when you are working on a `.Rmd` file that attempts to load a package that you do not have installed, RStudio will let you know - you will see the following notification at the top of your screen. It suffices just to click **Install**, and RStudio will take care of the missing packages for you.
 
 ![](img/packages3.png)
 
@@ -270,63 +267,63 @@ Sometimes, when you are working on an .Rmd file that attempts to load a package 
 
 The way RStudio is right out of the box is neither particularly nice nor helpful. 
 
-A first thing I suggest you do is change your theme. The bright white theme that RStudio defaults to is not very great for your eyes if you spend a lot of time working looking at it, so a dark theme would be better. 
+A first thing I suggest you do is change your theme. The bright white theme that RStudio defaults to is not very great for your eyes if you spend a lot of time looking at it, so a dark theme would be better. 
 
-To change your theme, go to `Tools > Global Options` in the RStudio menu. You can get there quickly by pressing `Cmd + ,` on a Mac. Unfortunately, there's no keyboard shortcut for Windows.
+To change your theme, go to **Tools** > **Global Options** in the RStudio menu. You can get there quickly by pressing `Cmd + ,` on a Mac. Unfortunately, there's no keyboard shortcut for Windows.
 
 ![](img/customize1.png)
 
-A small window will pop up. Click on *Appearance* in the menu on the left hand side of this window.
+A small window will pop up. Click on **Appearance** in the menu on the left hand side of this window.
 
 ![](img/customize2.png)
 
-You will now have access to a bunch of options that control the way RStudio looks, e.g. font, font size etc. To change the theme, look under *Editor theme* - there, you will find a list of all the available themes. Everytime you click on one, e.g. *Dracula*, you will be shown a preview of what the code will look like on the right hand side of the window. Feel free to explore the list and pick the theme that you'd be most comfortable using. Again, I suggest you pick a dark theme since it's better for your eyes.
+You will now have access to a bunch of options that control the way RStudio looks, e.g. font, font size etc. To change the theme, look under **Editor theme** - there, you will find a list of all the available themes. Everytime you click on one, e.g. *Dracula*, you will be shown a preview of what the code will look like on the right hand side of the window. Feel free to explore the list and pick the theme that you'd be most comfortable using. Again, I suggest you pick a dark theme since it's better for your eyes.
 
 ![](img/customize3.png)
 
-Once you have found the theme you most fancy, make sure you select it by clicking on it. For example, in the screenshot below, I have selected the theme "Twilight". Then click *Ok*.  Changes should take effect immediately.
+Once you have found the theme you most fancy, make sure you select it by clicking on it. For example, in the screenshot below, I have selected the theme *Twilight*. Then click **Ok**.  Changes should take effect immediately.
 
 ![](img/customize4.png)
 
 # Customizing RStudio - Layout
 
-Another very important thing for you to do is to reorganize the pane layout. The interface of RStudio is split up into 4 areas. By default, these 4 areas are: *Source*, *Console*, *Environment and History*, and *Everything else (Files, Plots, Packages, Help, Viewer etc.)*, as you can see in the screenshot below. 
+Another very important thing for you to do is to reorganize the pane layout. The interface of RStudio is split up into 4 areas. By default, these 4 areas are: **Source**, **Console**, **Environment and History**, and **Everything else (Files, Plots, Packages, Help, Viewer etc.)**, as you can see in the screenshot below. 
 
 ![](img/customize5.png)
 
 This is, in my opinion, not a great layout. I'll explain why in a second. First, let's take a look at what each component does:
 
-1. In the *Source* pane is where you write your code, e.g. when you work on an .Rmd file for your homework.
-2. The *Console* is basically like a playground for you to experiment with pieces of code.
-3. All the objects you have created (i.e. variables or functions) are listed in the *Environment*.
-4. All the commands you have executed are listed in chronological order in the *History* pane.
-5. If you're using Git with your project, a *Git* pane will also show up here telling you what files need to be commited (don't worry if you don't understand what this means - you don't really need to).
-6. You can access the files on your computer from within the *Files* pane.
-7. *Plots* is where the graphs will show up if you run commands like `gf_point()` at the console.
-8. *Connections* is where your connections will show up. You probably won't be using this much so don't worry about it.
-9. *Packages* is where all the installed packages show up. There's a tick next to a package if that package is loaded in your current R session. Checking one of these boxes is equivalent to running `library(package-name)` into the console.
-10. *Help* is where help pages show up when you run `?command_name` or `help(command_name)` in the console.
-11. You can preview files in the *Viewer* pane.
+1. The **Source** pane is where you write your code, e.g. when you work on a `.Rmd` file for your homework.
+2. The **Console** is basically like a playground for you to experiment with pieces of code.
+3. All the objects you have created (i.e. variables or functions) are listed in the **Environment**.
+4. All the commands you have executed are listed in chronological order in the **History** tab.
+5. If you're using Git with your project, a **Git** tab will also show up here telling you what files need to be commited (don't worry if you don't know what this means - you don't really need to).
+6. You can access the files on your computer from within the **Files** tab.
+7. **Plots** is where the graphs will show up if you run commands like `gf_point()` at the console.
+8. **Connections** is where your connections will show up. You probably won't be using this much so don't worry about it.
+9. **Packages** is where all the installed packages show up. There's a tick next to a package if that package is loaded in your current R session. Checking one of these boxes is equivalent to running `library(package-name)` into the console.
+10. **Help** is where help pages show up when you run `?command_name` or `help(command_name)` in the console.
+11. You can preview files in the **Viewer** pane.
 
-The most important two panes are *Source* and *Console* - that's where most of the action happens. The default RStudio layout splits the left side of the screen between these two very important panes, and, as a result, neither of them get the space they deserve. You're mostly not going to be using the right hand side of the screen much, so all that space is going to waste. This is why it's better to reorganize the panes as follows:
+The most important two panes are **Source** and **Console** - that's where most of the action happens as you work. The default RStudio layout splits the left side of the screen between these two very important panes, and, as a result, neither of them get the space they deserve. You're mostly not going to be using the right hand side of the screen much, so all that space is going to waste. This is why it's better to reorganize the panes as follows:
 
-Again, go to `Tools > Global Options` in the RStudio menu (`Cmd + ,` on a Mac). 
+Go to **Tools** > **Global Options** in the RStudio menu (`Cmd + ,` on a Mac). 
 
 ![](img/customize1.png)
 
-Now click on *Pane Layout* in the left hand side menu.
+Now click on **Pane Layout** in the left hand side menu.
 
 ![](img/customize6.png)
 
-In the top left pane, select *Console* from the dropdown menu. This will move the console to the top right hand side, making more space for the *Source* pane on the left. *Environment and History* will get moved to where the console used to be (bottom left).
+In the top left pane, select **Console** from the dropdown menu. This will move the console to the top right hand side, making more space for the **Source** pane on the left. **Environment and History** will get moved to where the console used to be (bottom left).
 
 ![](img/customize7.png)
 
-Now as a last change, check the *Environment* box in the bottom right pane. This moves the environment tab over to the left. 
+Now as a last change, check the **Environment** box in the bottom right pane. This moves the environment tab over to the left. 
 
 ![](img/customize8.png)
 
-Now, click *Ok* for the changes to take effect.
+Now, click **Ok** for the changes to take effect.
 
 ![](img/customize9.png)
 
@@ -334,69 +331,69 @@ Make sure you collapse the bottom left pane by pressing the small rectangular ic
 
 ![](img/customize10.png)
 
-Look how much space there is for the *Source* pane now, and you still get access to the most important panes (*Console*, *Environment*, *Files*, *Help* etc.) on the right hand side!
+Look how much space there is for the Source pane now, and you still get access to the most important panes (Console, Environment, Files, Help etc.) on the right hand side!
 
 # Directory Structure
 
-It's good to be organized when saving your files - so let's briefly go over the folder hierarchy.
+It's good to be organized when saving your files - so let's briefly go over how to organize your folders.
 
-RStudio has what is called the *Files* pane, usually in the bottom right of your screen. My setup probably looks a little different than yours, since I moved some stuff around and also have a theme applied, but the *Files* pane should be in the same place.
+As mentioned before, RStudio has what is called the **Files** pane, usually in the bottom right of your screen.
 
 ![](img/files.png)
 
-That's basically your computer - same thing as opening up a Finder window on Mac, or a File Explorer window on Windows, only now you can browse through your files from within another program. The place in your computer that will be displayed by default is what is known as your *Home directory* (directory is just a fancy name for folder) - this is usually ``/Users/yourname``. To find out where your *Home* is, type the following into your console:
+That's basically your computer (same thing as opening up a Finder window on Mac, or a File Explorer window on Windows), only now you can browse through your files from within another program. The place in your computer that will be displayed by default is what is known as your **Home directory** (directory is just a fancy name for folder) - this is usually `/Users/yourname`. To find out where your **Home** is, type the following into your console:
 
 ```{r, eval=FALSE}
 getwd()
 ```
 
-This actually prints your *Working directory*, not your *Home directory*, but by default (or unless you changed it manually), your working directory should be your home directory. 
+This actually prints your **Working directory**, not your **Home directory**, but by default (or unless you changed it manually), your working directory should be your home directory. 
 
-So what's the difference between the two? Well, your home directory is fixed - you always start out there. In a way, everytime you turn on your computer, that's where you "spawn". If you open up the terminal on a Mac or the Command Line on a Windows machine, that's the place you are in by default. It is, quite literally, your home. 
+So what's the difference between the two? Well, your home directory is fixed - you always start out there. In a way, everytime you turn on your computer, that's where you "spawn". If you open up the Terminal on a Mac or the Command Line on a Windows machine, that's the place you are in by default. It is, quite literally, your home. 
 
-From your home, you can of course travel to many different places. That's the idea of a working directory. You won't always be working directly in your home - you might be working in a subfolder. So then that subfolder that you're currently working on will be your working directory. There can be many working directories (any of the folders in your computer that you decide to work in), but there can only be one home directory.
+From your home, you can of course travel to many different places. That's the idea of a working directory. You won't always be working directly in your home - you might be working in a subfolder. So then that subfolder that you're currently working on will be your working directory. There can be many working directories (i.e. any of the folders in your computer that you decide to work in), but there can only be one home directory.
 
 As mentioned before, it's a good idea to be organized with your files. I suggest having one different folder for every course you are taking that requires you work in R. Within the files pane, make sure you are in the home directory (you can quickly get there from anywhere else by clicking on the nice little house icon).
 
 ![](img/home1.png)
 
-Now click on *New Folder*.
+Now click on **New Folder**.
 
 ![](img/home2.png)
 
-You will be prompted for a folder name - call it ``STAT135`` (or whatever else you wish, just make sure you know what it stands for). As a general guideline, it's good practice to not include spaces in your folder names. That makes working with them at the command line easier, but if you don't think you'll be doing any sort of programming later on, I guess spaces wouldn't hurt too much. Click *Ok*.
+You will be prompted for a folder name - call it `STAT135` (or whatever else you wish, just make sure you know what it stands for). As a general guideline, it's good practice to not include spaces in your folder names. That makes working with them at the command line easier, but if you don't think you'll be doing any such programming later on, I guess spaces wouldn't hurt too much. Click **Ok**.
 
 ![](img/home3.png)
 
-Now a folder has been created for you - you can check that it exists in the *Files* pane. That folder isn't only in RStudio, it actually exists now on your machine, so you can access it with Finder of File Explorer as well! We just used RStudio as a tool to create it. 
+Now a folder has been created for you - you can check that it exists in the Files pane. That folder isn't only in RStudio, it actually exists now on your machine, so you can access it with Finder of File Explorer as well! We just used RStudio as a tool to create it.
 
 ![](img/home4.png)
 
-Every class-related file that you get, make sure to put inside this newly created folder. That way, you'll always know where to find something. Within the STAT135 folder, you can go ahead and create other subfolders if you so please. I like to have separate folders for my class notes, for the homework, and for in-class activities, but it's up to you if and how you want to organize your files.
+Make sure to put every class-related file inside this newly created folder. That way, you'll always know where to find something. Within the `STAT135` folder, you can go also ahead and create other subfolders if you so please. I like to have separate folders for my class notes, for the homework, and for in-class activities, but it's up to you if and how you want to organize your files.
 
 ![](img/home5.png)
 
-Note that RStudio always tells you the current directory you are in at the top of the *Files* pane. So even if you're deep into many many nested directories, you will always know where you are in relation to your home directory.
+Note that RStudio always tells you the current directory you are in at the top of the Files pane. So even if you're deep into many many nested directories, you will always know where you are in relation to your home directory.
 
 ![](img/home6.png)
 
 # Transferring Files from the Server
 
-Now you should move all the files you have on the server to your machine. One very straightforward way to do that is to just log on to the RStudio server (if it decides to work at that particular moment),  
+Now you should move some of the files you have on the server to your machine - whichever ones you think you might need to work with locally later on. One very straightforward way to do that is to just log on to the RStudio server (if it decides to work at that particular moment), and directly download the files. 
 
-For Mac users, there's also two other ways, should the RStudio server not be currently available. Unfortunately, if you're a Windows user, those ways will not work for you. The reason is that the college's server is UNIX-based, as are Macs, so integration between the two is very easy. Windows is not UNIX-based, so it's more difficult to access a remote UNIX server. If you have a Windows machine, the easiest way to get your server files on your local machine is by using the download method, whever the RStudio server is working. Otherwise, go to IT - they might be able to help you out in other ways.
+For Mac users, there's also two other ways, should the RStudio server not be currently available. Unfortunately, if you're a Windows user, those ways will not work for you. The reason is that the college's server is UNIX-based, as are Macs, so integration between the two is very easy. Windows is not UNIX-based, so it's more difficult to access a remote UNIX server, and while there are instructions for doing so, the probability you'll run into some sort of error is very high. If you have a Windows machine, the easiest way to get your server files locally is by using the direct download method, whenever the RStudio server is working. Otherwise, go to IT (Level 1 of Seeley Mudd) - they might be able to help you out in other ways.
 
 ## Download (MacOS and Windows)
 
-The most straightforward way to get all your files from the server is simply by downloading them. Log into the RStudio server (if it's working at the moment), and then look at the *Files* pane in the bottom right corner. Check the box next to all the files and folders you want to download.
+The most straightforward way to get all your files from the server is simply by downloading them. Log into the RStudio server (if it's working at the moment), and then look at the Files tab in the bottom right corner. Check the box next to all the files and folders you want to download.
 
 ![](img/transfer1.png)
 
-Now in the menu at the top of the pane, click `More > Export`.
+Now in the menu at the top of the pane, click **More** > **Export**.
 
 ![](img/transfer2.png)
 
-If you selected multiple files or a folder, they will be downloaded as a zipped file (extension `.zip`). You can name that whatever you want. Click *Download*.
+If you selected multiple files or a folder, they will be downloaded as a zipped file (`.zip`). You can name that file whatever you want, then click **Download**.
 
 ![](img/transfer3.png)
 
@@ -408,7 +405,7 @@ You can now find it in your local *Downloads* folder, or wherever else you set y
 
 ![](img/transfer5.png)
 
-Double clicking on the `.zip `file will unzip it and yield a normal folder. The files are now on your local machine, and you can now move them wherever you want in your system, as you please.
+Double clicking on the `.zip `file will unzip it and yield a normal folder. The files are now on your local machine, and you can move them wherever you want in your system, as you please.
 
 ## Mapping Drives (MacOS only)
 
@@ -416,19 +413,19 @@ Instructions taken from [the Amherst IT page](https://www.amherst.edu/offices/it
 
 <span style="color:red">Note that this method only works on-campus while connected to the Amherst network, or off-campus with a [VPN connection to the Amherst network](https://www.amherst.edu/offices/it/services/network/vpn).</span>
 
-Another way that works really nicely for Macs is mapping drives. Basically, you'll have all the server files mapped to your machine at all times, as if the server was just another folder in your memory. To begin, open the Finder menu, and go to `Go > Connect to Server...`.
+Another way that works really nicely for Macs is mapping drives. Basically, you'll have all the server files mapped onto your machine at all times, as if the server was just another folder in your memory. To begin, open the Finder menu, and go to **Go** > **Connect to Server...**.
 
 ![](img/transfer6.png)
 
-In the text box that appears, type the address `smb://unix-mac.amherst.edu`. Then click *Connect*.
+In the text box that appears, type in the address `smb://unix-mac.amherst.edu`. Then click **Connect**.
 
 ![](img/transfer7.png)
 
-You might be prompted for your Amherst username and password. Enter those, and then a window will pop up asking you which volumes you want to mount. Select the one corresponding to your username, and click *Ok*.
+You might be prompted for your Amherst username and password. Enter those, and then a window will pop up asking you which volumes you want to mount. Select the one corresponding to your username, and click **Ok**.
 
 ![](img/transfer8.png)
 
-Now if you open up a finder window, you'll see in the left hand side menu, under *Locations*, a link to *unix-mac.amherst.edu*. If you click there, you can access your server files locally, within that very same Finder window. You can now drag and drop the files to copy them wherever you want in a local directory, or you can just open them locally by double-clicking and proceed to work on them directly using your installation of RStudio.
+Now if you open up a finder window, you'll see in the left hand side menu, under **Locations**, a link to `unix-mac.amherst.edu`. If you click there, you can access your server files locally, within that very same Finder window. You can now drag and drop the files to copy them wherever you want in a local directory, or you can just open them directly by double-clicking and proceed to work on them using your local RStudio install.
 
 ![](img/transfer9.png)
 
@@ -436,9 +433,9 @@ Now if you open up a finder window, you'll see in the left hand side menu, under
 
 Instructions taken from [the Amherst IT page](https://www.amherst.edu/academiclife/departments/computer_science/computing/mac). 
 
-Again, this method only works from a Mac. It might also work on Windows if you have a Linux client installed, like Cygwin. Through the terminal, you can issue a command to copy all of your server files onto your local machine. This is probably the simplest method, if you're comfortable with the terminal. Don't worry if you don't understand what the commands below do - you can simply copy and paste them in, without worrying about what they mean.
+Again, this method only works from a Mac. It might also work on Windows if you have a Linux client installed, like Cygwin. Through the Terminal, you can issue a command to copy all of your server files onto your local machine. This is probably the simplest method, if you're comfortable with the terminal, but it might take longer than the previous two methods. Also, don't worry if you don't understand the meaning of the commands below - you can simply copy and paste them in, without worrying about what they do.
 
-Open up a fresh terminal window. You must create a directory to hold all of our files from the server - you can't just dump them all somewhere since that'd be messy. First, let's ensure you're in the home directory, by using the `cd` command. Type in the following and press `return`:
+Open up a fresh Terminal window. You must create a directory to hold all of your files from the server - you can't just dump them all somewhere since that'd be messy and a sure-fire way to forget where things are. First, let's ensure you're in the home directory, by using the `cd` command. Type the following into the Terminal and press `return`:
 
 ```{bash, eval=FALSE}
 cd
@@ -450,77 +447,77 @@ Now, let's create a folder where we can put all of the server files. The `mkdir`
 mkdir Server Files
 ```
 
-Now change into the *ServerFiles* folder by again using the `cd` command followed by the name of the folder and then pressing `return`:
+Now change into the *ServerFiles* folder by again using the `cd` command followed by the name of the folder, and then pressing `return`:
 
 ```{bash, eval=FALSE}
 cd Server Files
 ```
 
-You'll see the prompt will have probably changed. Now type the following into the terminal and press `return`. This command takes **every single file** you have on the server and puts it into the *ServerFiles* folder. **Make sure to replace `your-username` with your Amherst username, e.g. jsmith22!**
+You'll see that the prompt has changed. Now type the following into the Terminal and press `return`. This command takes **every single file** you have on the server and puts it into the *ServerFiles* folder. **Make sure to replace `your-username` with your Amherst username, e.g. jsmith22!**
 
 ```{bash, eval=FALSE}
 scp -r 'your-username@romulus.amherst.edu:*' .
 ```
 
-You'll be asked for your Amherst account password. Enter that, and wait - you'll see a lot of output as the server dumps every file you have on it locally. This might take a while, depending on how much stuff you have on the server, so feel free to go make some tea or buy a drink. If it's taking waaaay too long, you can terminate the process by pressing `Ctrl + C`.
+You'll be asked for your Amherst account password. Enter that, and wait - you'll see a lot of output as the server dumps every file you have into the *ServerFiles* folder. This might take a while, depending on how much stuff you have on the server, so feel free to go make some tea or buy a drink. If it's taking waaaay too long, you can terminate the process by pressing `Ctrl + C`.
 
-If you know you only want one specific folder, you can instead use the following command, which is much faster since it doesn't copy every single thing on the server:
+If you know you only want to download one specific folder, you can instead use the following command, which is much faster since it doesn't copy every single file on the server:
 
 ```{bash, eval=FALSE}
 scp -r 'your-username@romulus.amherst.edu:directory-name' .
 ```
 
-All your server files will now be in the *ServerFiles* folder, which in turn is in the home directory.
+All your server files will now be in the *ServerFiles* folder, which in turn is in the home directory, and you can move them around in your computer as you please.
 
 # Using Git with RStudio
 
-If you're reading this section, I'm assuming you know what Git and GitHub are, and how to use them from the terminal/Git bash. If you don't know what these tools are, don't worry - they're specialized version control tools and you probably don't need any knowledge of them in an Intro Stats class. This section is for those that specifically already use Git but don't know how to integrate it with RStudio.
+If you're reading this section, I'm assuming you know what Git and GitHub are, and how to use them from the Terminal/Git bash. If you don't know what these tools are, don't worry - they're specialized version control tools and you probably don't need any knowledge of them in an Intro Stats class. This section is for those that specifically already use Git but don't know how to integrate it with RStudio.
 
-First, you must generate an SSH RSA key within your local RStudio installation. Go to `Tools > Global Options` in the RStudio menu (`Cmd + ,` on a Mac).
+First, you must generate an SSH RSA key within your local RStudio installation. Go to **Tools** > **Global Options** in the RStudio menu (`Cmd + ,` on a Mac).
 
 ![](img/customize1.png)
 
-In the left hand side menu, click on *Git/SVN*.
+In the left hand side menu, click on **Git/SVN**.
 
 ![](img/git1.png)
 
-Make sure the box at the top (the one saying *Enable version control interface for RStudio projects*) is checked, and then click on *Create RSA Key...* under the *SSH RSA Key* section.
+Make sure the box at the top (the one saying "Enable version control interface for RStudio projects") is checked, and then click on **Create RSA Key...** under the "SSH RSA Key" section.
 
 ![](img/git2.png)
 
-I recommend not using a passphrase since that will ask you for said passphrase everytime you commit something (which is quite inconvenient). There's no need for such security measures unless you're working on a public computer (which I assume you are not). Click *Create*.
+I recommend not using a passphrase since that means RStudio will ask you for said passphrase everytime you commit something (which is quite inconvenient). There's no need for such security measures unless you're working on a public computer (which I assume you are not). Click **Create**.
 
 ![](img/git3.png)
 
-You'll see some funny looking text. Click *Close*.
+You'll see some funny-looking text. Click **Close**.
 
 ![](img/git4.png)
 
-This will take you back to the Global Options window. Now clikc on *View Public Key*.
+This will take you back to the Global Options window. Now click on **View Public Key**.
 
 ![](img/git5.png)
 
-This will show you the SSH RSA key. Press `Cmd + C` on a Mac or `Ctrl + C` on Windows to copy the key. Then click *Close*.
+This will show you the SSH RSA key. Press `Cmd + C` on a Mac or `Ctrl + C` on Windows to copy the key. Then click **Close**.
 
 ![](img/git6.png)
 
-You'll again be taken back to the main window. Click *Ok* to close it.
+You'll again be taken back to the main window. Click **Ok** to close it.
 
 ![](img/git7.png)
 
-Now you need to register this key within GitHub. Log into your account (I won't show you how to do thta - I assume you know how) and go to *Settings*.
+Now you need to register this key within GitHub. Log into your account (I won't show you how to do that - I assume you know how), and go to **Settings**.
 
 ![](img/git8.png)
 
-In the left hand side menu, click on *SSH and GPG keys*.
+In the left hand side menu, click on **SSH and GPG keys**.
 
 ![](img/git9.png)
 
-Now click the big green button that says *New SSH Key*.
+Now click the big green button that says **New SSH Key**.
 
 ![](img/git10.png)
 
-This will take you to a page where you can register your SSH key. Give it a title, such as "R Studio Local", so you remember what the key is for, and then paste the key into the large text area provided (`Cmd + V` on Mac, `Ctrl + V` on Windows). Then click on *Add SSH key* at the bottom.
+This will take you to a page where you can register your SSH key. Give it a title, such as "R Studio Local", so you remember what the key is for, and then paste the key into the large text area provided (`Cmd + V` on Mac, `Ctrl + V` on Windows). Then click on **Add SSH key** at the bottom.
 
 ![](img/git11.png)
 
@@ -528,7 +525,7 @@ You will be asked to confirm your password.
 
 ![](img/git12.png)
 
-Now you should be ready to use RStudio with GitHub. Go to one of your repositories that you'd like to work on locally, and click on the green button that says *Clone or download*, and then click on *Use SSH*.
+Now you should be ready to use RStudio with GitHub. Go to one of your repositories that you'd like to work on locally, and click on the green button that says **Clone or download**, and then click on **Use SSH**.
 
 ![](img/git13.png)
 
@@ -536,23 +533,23 @@ Then click the icon to the side of the SSH key to copy it.
 
 ![](img/git14.png)
 
-Now go to RStudio. In the top menu, go to `File > New Project...`. 
+Now go back to RStudio. In the top menu, go to **File** > **New Project...**. 
 
 ![](img/git15.png)
 
-Choose *Version Control*.
+Choose **Version Control**.
 
 ![](img/git16.png)
 
-Choose *Git*.
+Choose **Git**.
 
 ![](img/git17.png)
 
-Now paste the key you copied from GitHub into the field that says "Repository URL" (`Cmd + V` on Mac, `Ctrl + V` on Windows). The Project directory name should get filled in automatically with the name of your repo. Choose whatever directory you would like to clone the repo in, and click *Create Project*.
+Now paste the key you copied from GitHub into the field that says "Repository URL" (`Cmd + V` on Mac, `Ctrl + V` on Windows). The Project directory name should get filled in automatically with the name of your repo - if not, you can fill that in manually. Choose whatever directory you would like to clone the repo in, and click **Create Project**.
 
 ![](img/git18.png)
 
-Now everytime you work on a project with Git, you will see a *Git* tab appear in RStudio. If you followed the pane layout guide above, then your Git tab should appear in the bottom left corner. Otherwise, just look around for it - you'll spot it pretty easily. Note that you have to be within a version control project for the Git tab to appear. When you edit files as you work, you can click on the Git tab to see what's changed. Files marked with a blue M have been modified, files marked with a yellow question mark have been newly added, files marked with a red D have been deleted etc.
+Now everytime you work on a project with Git, you will see a **Git** tab appear in RStudio. If you followed the pane layout guide above, then your Git tab should appear in the bottom left corner. Otherwise, just look around for it - you'll spot it pretty easily. Note that you have to be within a version control project for the Git tab to appear. When you edit files as you work, you can click on the Git tab to see what's changed. Files marked with a blue M have been modified, files marked with a yellow question mark have been newly added, files marked with a red D have been deleted etc.
 
 ![](img/git19.png)
 
@@ -560,24 +557,28 @@ Check all the boxed by the files you want to add/commit.
 
 ![](img/git20.png)
 
-Click *Commit*.
+Click **Commit**.
 
 ![](img/git21.png)
 
-This will take you to a separate screen. You can write your commit message in the dedicated box at the top right of the screen, and then click *Commit*.
+This will take you to a separate screen. You can write your commit message in the dedicated box at the top right of the screen, and then click **Commit**.
 
 ![](img/git23.png)
 
-A Git dialog box will appear. Once everything is done, click *Close*.
+A Git dialog box will appear. Once everything is done, click **Close**.
 
 ![](img/git24.png)
 
-Now push the changes to GitHub by clicking *Push* in the top right corner. 
+Now push the changes to GitHub by clicking **Push** in the top right corner. 
 
 ![](img/git25.png)
 
-Another Git dialog box will appear. Wait until everything is done, and click *Close*.
+Another Git dialog box will appear. Wait until everything is done, and click **Close**.
 
 ![](img/git26.png)
 
-That's it! Now you should see your changes in the GitHub repo. Follow the same workflow for every Git project you have in RStudio.
+That's it! Now you should see the changes you just pushed in the GitHub repo. Follow the same workflow for every Git project you have in RStudio, and remember to pull and push often, and write descriptive commit messages!
+
+<!-- Removing trailing whitespace caused by toc_float -->
+
+<div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 0;"></div>

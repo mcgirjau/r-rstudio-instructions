@@ -1,5 +1,7 @@
 
-# R and RStudio Technical Guide for Amherst Students
+# R and RStudio Technical Guide
+
+## for Amherst Students
 
 Technical instructions for Amherst students taking introductory
 Statistics classes - access it

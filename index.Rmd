@@ -16,7 +16,7 @@ This is a set of technical instructions to help you set up everything you might 
 
 Instructions for both Mac and Windows operating systems are included, as well as plenty of screenshots to make the process easy to follow. Instructions for Linux distros are not provided, but presumably if you use Linux you're knowledgeable enough about computers to be able to figure out stuff on your own.
 
-<span style="color:red">A word of warning:</span> The Amherst RStudio server uses R version 3.5.2, but the one we will be installing in this guide is version 3.6.1. It just so happens that R changed the way it implements randomization algorithms in version 3.6, so functions involving random numbers (e.g. ``sample()``, ``shuffle()``, or ``rnorm()`` ) will yield different results when run locally than when run on the server (even with the same argument to ``set.seed()``). Be mindful of this if your homework includes working with random numbers, and let the professor know if you think something that's technically correct has been marked as wrong by the graders - answers are bound to differ between students working on the server and those working locally, but both should be accepted.
+<span style="color:red">Note:</span>The Amherst RStudio server has been updated to R version 3.6.1, so the previous issues regarding different results when working with random numbers are not a concern anymore. Everything should run the same both on your local installation, and on the online server.
 
 # Installing R (for MacOS)
 
@@ -34,7 +34,7 @@ Let's download R. Go to https://cloud.r-project.org/ and click on **Download R f
 
 ![](img/mac1.png)
 
-Click on the `.pkg` download of the latest R release (as of November 2019, that is 3.6.1, nicknamed "Action of the Toes" as a reference to [this Peanuts comic](https://www.gocomics.com/peanuts/1971/03/22)).
+Click on the `.pkg` download of the latest R release (as of late February 2020, that is 3.6.3, nicknamed "Holding the Windsock" as a reference to [this Peanut comic](https://www.gocomics.com/peanuts/1974/02/25)).
 
 Now let's start the installation. Double click on the downloaded `.pkg` file in your browser's download pane to start the installer.
 
@@ -265,9 +265,7 @@ Sometimes, when you are working on a `.Rmd` file that attempts to load a package
 
 # Customizing RStudio - Theme
 
-The way RStudio is right out of the box is neither particularly nice nor helpful. 
-
-A first thing I suggest you do is change your theme. The bright white theme that RStudio defaults to is not very great for your eyes if you spend a lot of time looking at it, so a dark theme would be better. 
+A first thing I suggest you do once you've downloaded RStudio is change your theme. The bright white theme that RStudio defaults to is not very great for your eyes if you spend a lot of time looking at it, so a dark theme would be better. 
 
 To change your theme, go to **Tools** > **Global Options** in the RStudio menu. You can get there quickly by pressing `Cmd + ,` on a Mac. Unfortunately, there's no keyboard shortcut for Windows.
 
@@ -287,11 +285,11 @@ Once you have found the theme you most fancy, make sure you select it by clickin
 
 # Customizing RStudio - Layout
 
-Another very important thing for you to do is to reorganize the pane layout. The interface of RStudio is split up into 4 areas. By default, these 4 areas are: **Source**, **Console**, **Environment and History**, and **Everything else (Files, Plots, Packages, Help, Viewer etc.)**, as you can see in the screenshot below. 
+Another thing I suggest you do is reorganize the pane layout. The interface of RStudio is split up into 4 areas. By default, these 4 areas are: **Source**, **Console**, **Environment and History**, and **Everything else (Files, Plots, Packages, Help, Viewer etc.)**, as you can see in the screenshot below. 
 
 ![](img/customize5.png)
 
-This is, in my opinion, not a great layout. I'll explain why in a second. First, let's take a look at what each component does:
+I'll be suggesting a specific rearrangement of these panes that, in my opinion, provides a better work environment than the default one. But first, let's take a look at what each component does:
 
 1. The **Source** pane is where you write your code, e.g. when you work on a `.Rmd` file for your homework.
 2. The **Console** is basically like a playground for you to experiment with pieces of code.
@@ -305,7 +303,7 @@ This is, in my opinion, not a great layout. I'll explain why in a second. First,
 10. **Help** is where help pages show up when you run `?command_name` or `help(command_name)` in the console.
 11. You can preview files in the **Viewer** pane.
 
-The most important two panes are **Source** and **Console** - that's where most of the action happens as you work. The default RStudio layout splits the left side of the screen between these two very important panes, and, as a result, neither of them get the space they deserve. You're mostly not going to be using the right hand side of the screen much, so all that space is going to waste. This is why it's better to reorganize the panes as follows:
+The most important two panes are **Source** and **Console** - that's where most of the action happens as you work. The default RStudio layout splits the left side of the screen between these two very important panes, and, as a result, neither of them get the space they deserve. You're mostly not going to be using the right hand side of the screen much, so all that space is going to waste. This is why I think it's better to reorganize the panes as follows:
 
 Go to **Tools** > **Global Options** in the RStudio menu (`Cmd + ,` on a Mac). 
 

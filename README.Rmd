@@ -2,9 +2,9 @@
 output: github_document
 ---
 
-# Intro Stats Technical Guide
+# R and RStudio Technical Guide
 
-Technical instructions for Amherst students taking introductory Statistics classes - access it [here](https://mcgirjau.github.io/intro-stats/).
+This is a collection of technical instructions for Amherst College students taking introductory Statistics classes. It explains how to get R and RStudio up and running locally, along with some additional guidance on popular topics of interest for students (e.g. getting LaTeX ready for `.Rmd` documents, transferring files from Romulus and Remus, and using GitHub with RStudio). Available [here](https://mcgirjau.github.io/intro-stats/).
 
 Instructions are included for both MacOS and Windows, on the following topics:
 

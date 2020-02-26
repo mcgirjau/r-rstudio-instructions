@@ -7,7 +7,7 @@ R and RStudio up and running locally, along with some additional
 guidance on popular topics of interest for students (e.g. getting LaTeX
 ready for `.Rmd` documents, transferring files from Romulus and Remus,
 and using GitHub with RStudio). Available
-[here](https://mcgirjau.github.io/intro-stats/).
+[here](https://mcgirjau.github.io/r-rstudio-instructions/).
 
 Instructions are included for both MacOS and Windows, on the following
 topics:

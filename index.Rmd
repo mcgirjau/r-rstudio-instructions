@@ -16,8 +16,6 @@ This is a set of technical instructions to help you set up everything you might 
 
 Instructions for both Mac and Windows operating systems are included, as well as plenty of screenshots to make the process easy to follow. Instructions for Linux distros are not provided, but presumably if you use Linux you're knowledgeable enough about computers to be able to figure out stuff on your own.
 
-<span style="color:red">Note:</span>The Amherst RStudio server has been updated to R version 3.6.1, so the previous issues regarding different results when working with random numbers are not a concern anymore. Everything should run the same both on your local installation, and on the online server.
-
 # Installing R (for MacOS)
 
 If you already have R installed, skip this section and go straight to installing RStudio. To check whether or not you have R on your machine, open the Terminal and type:
@@ -26,7 +24,7 @@ If you already have R installed, skip this section and go straight to installing
 R --version
 ```
 
-If you get a `command not found` error, that means you don't have R installed and you can proceed with the steps below. If R is already on your machine, it's best to make sure you have the latest version - if your version is lower than 3.6.1, it might be a good idea to do a fresh reinstall of R.
+If you get a `command not found` error, that means you don't have R installed and you can proceed with the steps below. If R is already on your machine, it's best to make sure you have the latest version - if your version is lower than 4.0.2, it might be a good idea to do a fresh reinstall of R.
 
 ![](img/mac0.png)
 
@@ -34,13 +32,10 @@ Let's download R. Go to https://cloud.r-project.org/ and click on **Download R f
 
 ![](img/mac1.png)
 
-Click on the `.pkg` download of the latest R release (as of late February 2020, that is 3.6.3, nicknamed "Holding the Windsock" as a reference to [this Peanut comic](https://www.gocomics.com/peanuts/1974/02/25)).
-
-Now let's start the installation. Double click on the downloaded `.pkg` file in your browser's download pane to start the installer.
+Click on the `.pkg` download of the latest R release (as of late July 2020, that is 4.0.2, nicknamed *"Taking off again"*). You can check out what's new in this version of R [here](https://stat.ethz.ch/R-manual/R-devel/doc/html/NEWS.html) - perhaps most interestingly, since version 4.0.0, R now defaults to using `stringsAsFactors = FALSE` in calls to `data.frame()` and `read.table()`.
 
 ![](img/mac2.png)
-
-If you've ever installed anything on your Mac, you should be pretty comfortable with this process. Click **Continue**.
+Now let's start the installation. Double click on the downloaded `.pkg` file in your browser's download pane to start the installer. If you've ever installed anything on your Mac, you should be pretty comfortable with this process. Click **Continue**.
 
 ![](img/mac3.png)
 
@@ -56,11 +51,15 @@ Agree to the terms of service - if you disagree, you cannot install R.
 
 ![](img/mac6.png)
 
+Click **Continue** one last time.
+
+![](img/mac6.5.png)
+
 Finally, click **Install**. The installation is not big (just over 160Mb), but make sure you have sufficient disk space nonetheless.
 
 ![](img/mac7.png)
 
-Make sure to give permission for the installation. Note that you cannot do this unless you have administrator rights on your machine (which you should have if you're using your own laptop).
+Also, make sure to give permission for the installation. Note that you cannot do this unless you have administrator rights on your machine (which you should have if you're using your own laptop).
 
 ![](img/mac8.png)
 
@@ -68,11 +67,14 @@ Let the installation run its course. This should be pretty quick - less than a m
 
 ![](img/mac9.png)
 
-Close the installer. 
+Close the installer... 
 
 ![](img/mac10.png)
+...and move the `.pkg` file to Trash.
 
-To check that everything went well, reopen the terminal and type in the same command as before:
+![](img/mac10.5.png)
+
+To check that everything went well, reopen the Terminal and type in the same command as before:
 
 ```{bash, eval=FALSE}
 R --version
@@ -82,9 +84,9 @@ This time, the ``command not found`` error should be replaced by information on 
 
 # Installing R (for Windows)
 
-If you already have R installed, skip this section and go straight to installing RStudio. To check whether or not you have R, click on the *Start* menu at the bottom left of your desktop, and check whether R appears in the list of all programs. If it does, it means that R is already installed on your computer - clicking on it once will reveal which version it is. It's best to make sure you have the latest version installed - if your version is lower than 3.6.1, it might be a good idea to do a fresh reinstall of R.
+If you already have R installed, skip this section and go straight to installing RStudio. To check whether or not you have R, click on the *Start* menu at the bottom left of your desktop, and check whether R appears in the list of all programs. If it does, it means that R is already installed on your computer - clicking on it once will reveal which version it is. It's best to make sure you have the latest version installed - if your version is lower than 4.0.2, it might be a good idea to do a fresh reinstall of R.
 
-Let's download R. Go to https://cloud.r-project.org/ and click on **Download R for Windows**.
+Let's download R. Go to https://cloud.r-project.org/ and click on **Download R for Windows**. Note that the screenshots for the Windows installation are taken from an older version (3.6.1), but the process should still be the same.
 
 ![](img/win1.png)
 
@@ -92,7 +94,7 @@ Now under **Subdirectories**, click the **base** link.
 
 ![](img/win2.png)
 
-Click the link that says **Download R 3.6.1 for Windows** to download a `.exe` file.
+Click the link that says **Download R 4.0.2 for Windows** to download a `.exe` file.
 
 ![](img/win3.png)
 
@@ -144,7 +146,7 @@ Go to https://rstudio.com/products/rstudio/download/, and scroll down until you 
 
 ![](img/mac11.png)
 
-This takes us to a list of downloads for different platforms - choose the one that says **RStudio 1.2.5019 - macOS 10.12+ (64-bit)**. This will download a `.dmg` file onto your machine. 
+This takes us to another big blue button, for RStudio version 1.3.1056. It should automatically detect that you are using a Mac, so clicking it will download a `.dmg` file onto your machine. 
 
 ![](img/mac12.png)
 
@@ -156,7 +158,7 @@ A window like the one below will appear once everything is done. Click and drag 
 
 ![](img/mac14.png)
 
-Don't forget to eject the installer at the very end - right click onto the disk icon that appeared on your Desktop during installation, and select **Eject "RStudio-1.2.5019"**.
+Don't forget to eject the installer at the very end - right click onto the disk icon that appeared on your Desktop during installation, and select **Eject "RStudio-1.3.1056"**.
 
 ![](img/mac15.png)
 
@@ -168,15 +170,15 @@ Go to https://rstudio.com/products/rstudio/download/, and scroll down until you 
 
 ![](img/win14.png)
 
-This takes us to a list of downloads for different platforms - choose the one that says **RStudio 1.2.5019 - Windows 10/8/7 (64-bit)**. This will download a `.exe` file onto your machine. 
+This takes us to another big blue button, for RStudio version 1.3.1056. It should automatically detect that you are using a Windows machine (despite the screenshot below being from a Mac), so clicking it will download a `.exe` file onto your machine.
 
-![](img/win15.png)
+![](img/mac12.png)
 
 Double click on the `.exe` file in the downloads pane, or wherever you downloaded it to, to start the installer. Click **Next**.
 
 ![](img/win16.png)
 
-You will be prompted to choose a location for your installation - the setup wizard usually picks a good place by default (usually in your *Program Files* directory), so you needn't modify anything here unless you specifically want your RStudio installation in a different place. Also, make sure you have enough disk space available - RStudio requires a significant 777 Mb. Click **Next**.
+You will be prompted to choose a location for your installation - the setup wizard usually picks a good place by default (usually in your *Program Files* directory), so you needn't modify anything here unless you specifically want your RStudio installation in a different place. Also, make sure you have enough disk space available. Click **Next**.
 
 ![](img/win17.png)
 

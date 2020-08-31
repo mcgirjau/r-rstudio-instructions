@@ -86,7 +86,7 @@ This time, the ``command not found`` error should be replaced by information on 
 
 If you already have R installed, skip this section and go straight to installing RStudio. To check whether or not you have R, click on the *Start* menu at the bottom left of your desktop, and check whether R appears in the list of all programs. If it does, it means that R is already installed on your computer - clicking on it once will reveal which version it is. It's best to make sure you have the latest version installed - if your version is lower than 4.0.2, it might be a good idea to do a fresh reinstall of R.
 
-Let's download R. Go to https://cloud.r-project.org/ and click on **Download R for Windows**. Note that the screenshots for the Windows installation are taken from an older version (3.6.1), but the process should still be the same.
+Let's download R. Go to https://cloud.r-project.org/ and click on **Download R for Windows**.
 
 ![](img/win1.png)
 
@@ -102,39 +102,39 @@ Now let's start the installation. Double click on the downloaded `.exe` file in 
 
 You can use any language you want during installation, but this guide will be using English, so if you want to follow along it's best that you use English too. Click **Ok**.
 
-![](img/win5.png)
+![](img/win4.png)
 
 Click **Next**.
 
-![](img/win6.png)
+![](img/win5.png)
 
 You will be prompted to choose a location for your installation - the setup wizard usually picks a good place by default (usually in your **Program Files** directory), so you needn't modify anything here unless you specifically want your R installation in a different place. Click **Next**.
 
-![](img/win7.png)
+![](img/win6.png)
 
 You will now be prompted for which components you'd like to install - make sure all are selected (unless you specifically desire not to install certain components), and click **Next**.
 
-![](img/win8.png)
+![](img/win7.png)
 
 Accept defaults for startup options, unless you know what you're doing. Click **Next**.
 
-![](img/win9.png)
+![](img/win8.png)
 
 The setup wizard will create a shortcut in your Start Menu. You can leave everything as it is, and click **Next**.
 
-![](img/win10.png)
+![](img/win9.png)
 
 If you want to create a Desktop shortcut, or a Quick Launch shortcut, make sure to select the appropriate checkboxes. Leave the bottom two checkboxes (under "Registry entries") selected. Click **Next**.
 
-![](img/win11.png)
+![](img/win10.png)
 
 The setup wizard will now proceed to install everything appropriately. This should be fairly quick - less than a minute.
 
-![](img/win12.png)
+![](img/win11.png)
 
 Once the installation is complete, click **Finish** to quit the setup wizard.
 
-![](img/win13.png)
+![](img/win12.png)
 
 R should now be installed on your machine! Just to double check, click on the *Start* menu at the bottom left of your desktop, and make sure that R appears in the list of all programs.
 
@@ -146,7 +146,7 @@ Go to https://rstudio.com/products/rstudio/download/, and scroll down until you 
 
 ![](img/mac11.png)
 
-This takes us to another big blue button, for RStudio version 1.3.1056. It should automatically detect that you are using a Mac, so clicking it will download a `.dmg` file onto your machine. 
+This takes us to another big blue button, for the most recent version of RStudio. It should automatically detect that you are using a Mac, so clicking it will download a `.dmg` file onto your machine. 
 
 ![](img/mac12.png)
 
@@ -158,7 +158,7 @@ A window like the one below will appear once everything is done. Click and drag 
 
 ![](img/mac14.png)
 
-Don't forget to eject the installer at the very end - right click onto the disk icon that appeared on your Desktop during installation, and select **Eject "RStudio-1.3.1056"**.
+Don't forget to eject the installer at the very end - right click onto the disk icon that appeared on your Desktop during installation, and select **Eject "RStudio"**.
 
 ![](img/mac15.png)
 
@@ -168,37 +168,37 @@ Now let's install RStudio - the most popular IDE (Integrated Development Environ
 
 Go to https://rstudio.com/products/rstudio/download/, and scroll down until you see the download options. We will be downloading RStudio Desktop (Open Source License), since it is free - click the big blue **Download** button.
 
+![](img/win13.png)
+
+This takes us to another big blue button, for the most up-to-date version of RStudio. It should automatically detect that you are using a Windows machine, so clicking it will download a `.exe` file onto your machine.
+
 ![](img/win14.png)
-
-This takes us to another big blue button, for RStudio version 1.3.1056. It should automatically detect that you are using a Windows machine (despite the screenshot below being from a Mac), so clicking it will download a `.exe` file onto your machine.
-
-![](img/mac12.png)
 
 Double click on the `.exe` file in the downloads pane, or wherever you downloaded it to, to start the installer. Click **Next**.
 
-![](img/win16.png)
+![](img/win15.png)
 
 You will be prompted to choose a location for your installation - the setup wizard usually picks a good place by default (usually in your *Program Files* directory), so you needn't modify anything here unless you specifically want your RStudio installation in a different place. Also, make sure you have enough disk space available. Click **Next**.
 
-![](img/win17.png)
+![](img/win16.png)
 
 The setup wizard will create a shortcut in your Start Menu. You can leave everything as it is, and click **Next**.
 
-![](img/win18.png)
+![](img/win17.png)
 
 The setup wizard will now do its thing. This shouldn't take too long.
 
-![](img/win19.png)
+![](img/win18.png)
 
 Once the installation is complete, click **Finish** to quit the setup wizard.
 
-![](img/win20.png)
+![](img/win19.png)
 
 # Installing LaTeX
 
 LaTeX is a system for typing up high-quality documents. We need LaTeX in R in order to be able to knit R Markdown documents to pdf. If we try to knit a `.Rmd` file to `.pdf` before installing LaTeX, we get the following error:
 
-![](img/win21.png)
+![](img/win20.png)
 
 While LaTeX installations are platform-dependent, installing it for the sole purpose of use in R Markdown can be done very easily in a platform-independent way from within RStudio. Just open up RStudio, and type the following code into the console:
 
@@ -209,21 +209,21 @@ tinytex::install_tinytex()
 
 The installer will start. You will see something like this (note that this screenshot is taken from a Windows computer, it might look a tad different on a Mac):
 
-![](img/win22.png)
+![](img/win21.png)
 
 For Windows PCs only, you might see the following dialog box pop up. Just click **Ok**.
 
-![](img/win23.png)
+![](img/win22.png)
 
 As the dialog box mentioned, you'll see two more error dialog boxes. Don't worry about them - just ignore whatever they say and click **Ok** for both.
 
-![](img/win24.png)
+![](img/win23.png)
 
-![](img/win25.png)
+![](img/win24.png)
 
 Once everything is done, you should see the prompt (i.e. the funny `>` symbol in the console after which you type commands), as well as the following message:
 
-![](img/win26.png)
+![](img/win25.png)
 
 Now quit RStudio by pressing `Cmd + Q` on a Mac or `Alt + F4` on Windows, and then reopen it. To check whether your installation was successful, now type into the console:
 
@@ -471,7 +471,7 @@ All your server files will now be in the *ServerFiles* folder, which in turn is 
 
 # Using Git with RStudio
 
-If you're reading this section, I'm assuming you know what Git and GitHub are, and how to use them from the Terminal/Git bash. If you don't know what these tools are, don't worry - they're specialized version control tools and you probably don't need any knowledge of them in an Intro Stats class. This section is for those that specifically already use Git but don't know how to integrate it with RStudio.
+If you're reading this section, I'm assuming you know what Git and GitHub are, and how to use them from the Terminal/Git bash. If you don't know what these tools are, don't worry - they're specialized version control tools and you probably don't need any knowledge of them in an Intro Stats class. *This section is for those that specifically already use Git but don't know how to integrate it with RStudio.*
 
 First, you must generate an SSH RSA key within your local RStudio installation. Go to **Tools** > **Global Options** in the RStudio menu (`Cmd + ,` on a Mac).
 

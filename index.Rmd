@@ -5,6 +5,8 @@ output:
     css: style.css
     toc: true
     toc_float: true
+    includes:
+       in_header: header.html
 urlcolor: blue
 ---
 

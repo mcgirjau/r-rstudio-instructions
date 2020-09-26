@@ -14,6 +14,13 @@ urlcolor: blue
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+<div style="height: 50px; position:absolute; top:0; right:0; padding-right: 40px;">
+<script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=40f842362f22aff1bff962eca28906a94f06c293'></script>
+<script type='text/javascript' src='https://www.freevisitorcounters.com/en/home/counter/749209/t/0'></script>
+</div>
+
+<br><br>
+
 This is a set of technical instructions to help you set up everything you might need for your Statistics classes (e.g. R, RStudio, LaTeX) on your local machine. 
 
 Instructions for both Mac and Windows operating systems are included, as well as plenty of screenshots to make the process easy to follow. Instructions for Linux distros are not provided, but presumably if you use Linux you're knowledgeable enough about computers to be able to figure out stuff on your own.
